@@ -1,9 +1,9 @@
 {
   "source": "IBM Watson Assistant API v2 export_skills",
-  "at": "2026-09-05T02:13:53.733055+00:00",
+  "at": "2026-09-07T22:59:48.306069+00:00",
   "transformation": "Diálogo extraído de assistant_skills; workspace preservado com name, description e language. Demais skills e estado privado da instância omitidos.",
-  "sha256": "a21e0874f8768c1fb49ff0d459dff7068b52be40a882ba11d966a04a420794b3",
-  "intents": 14,
-  "entities": 5,
-  "dialog_nodes": 34
+  "sha256": "69d9cd217d3dc93982b62c2711b7035c7f751a05028871066c07941fcc4dfc94",
+  "intents": 22,
+  "entities": 6,
+  "dialog_nodes": 69
 }

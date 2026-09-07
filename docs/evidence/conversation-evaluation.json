@@ -1,0 +1,592 @@
+{
+  "at": "2026-09-07T22:58:47.945594+00:00",
+  "passed": true,
+  "total": 31,
+  "correct": 31,
+  "steps": [
+    {
+      "case": "medicoes_e_correcao",
+      "input": "Anote 120/80 mmHg e 72 bpm",
+      "passed": true,
+      "mismatches": {},
+      "output": [
+        {
+          "response_type": "text",
+          "text": "Anotei a pressão de 120/80 mmHg e os batimentos de 72 bpm. Os dois valores estão certos?"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "informar_medicao",
+          "confidence": 0.9379938244819641,
+          "skill": "main skill"
+        }
+      ]
+    },
+    {
+      "case": "medicoes_e_correcao",
+      "input": "Conferi e confirmo o resumo",
+      "passed": true,
+      "mismatches": {},
+      "output": [
+        {
+          "response_type": "text",
+          "text": "Pronto, o resumo ficou confirmado. Quer acrescentar mais alguma coisa?"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "consultar_resumo",
+          "confidence": 0.7576610445976257,
+          "skill": "main skill"
+        }
+      ]
+    },
+    {
+      "case": "medicoes_e_correcao",
+      "input": "Corrige a pressão para 125/82 mmHg",
+      "passed": true,
+      "mismatches": {},
+      "output": [
+        {
+          "response_type": "text",
+          "text": "Corrigi a pressão para 125/82 mmHg. Ficou certo agora?"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "corrigir_informacao",
+          "confidence": 0.9665228128433228,
+          "skill": "main skill"
+        }
+      ]
+    },
+    {
+      "case": "incerteza_e_agradecimento",
+      "input": "Quero contar meus sintomas",
+      "passed": true,
+      "mismatches": {},
+      "output": [
+        {
+          "response_type": "text",
+          "text": "O que você gostaria de registrar sobre como está se sentindo?"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "relatar_sintomas",
+          "confidence": 1,
+          "skill": "main skill"
+        }
+      ]
+    },
+    {
+      "case": "incerteza_e_agradecimento",
+      "input": "Agradeço a ajuda",
+      "passed": true,
+      "mismatches": {},
+      "output": [
+        {
+          "response_type": "text",
+          "text": "De nada! O que você gostaria de registrar sobre como está se sentindo?"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "agradecer",
+          "confidence": 0.9313235282897949,
+          "skill": "main skill"
+        }
+      ]
+    },
+    {
+      "case": "incerteza_e_agradecimento",
+      "input": "Não sinto dor, só um cansaço leve",
+      "passed": true,
+      "mismatches": {},
+      "output": [
+        {
+          "response_type": "text",
+          "text": "Desde quando isso acontece? Pode ser algo como “desde ontem”. Se não lembrar, pode dizer."
+        }
+      ],
+      "intents": [
+        {
+          "intent": "relatar_sintomas",
+          "confidence": 0.959208071231842,
+          "skill": "main skill"
+        }
+      ]
+    },
+    {
+      "case": "incerteza_e_agradecimento",
+      "input": "Não lembro quando começou",
+      "passed": true,
+      "mismatches": {},
+      "output": [
+        {
+          "response_type": "text",
+          "text": "Tudo bem. Vou deixar o período sem informação. Quer conferir o resumo?"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "pular",
+          "confidence": 0.8011050224304199,
+          "skill": "main skill"
+        }
+      ]
+    },
+    {
+      "case": "recusa",
+      "input": "Quero registrar meu histórico",
+      "passed": true,
+      "mismatches": {},
+      "output": [
+        {
+          "response_type": "text",
+          "text": "Que informação do seu histórico você quer acrescentar?"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "informar_historico",
+          "confidence": 0.9330630302429199,
+          "skill": "main skill"
+        }
+      ]
+    },
+    {
+      "case": "recusa",
+      "input": "Prefiro pular essa parte",
+      "passed": true,
+      "mismatches": {},
+      "output": [
+        {
+          "response_type": "text",
+          "text": "Tudo bem, você não precisa informar essa parte. Mantive o que já estava anotado. Quer ver o resumo ou registrar outra coisa?"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "pular",
+          "confidence": 0.3979215621948242,
+          "skill": "main skill"
+        }
+      ]
+    },
+    {
+      "case": "reformular_sem_gravar",
+      "input": "Quero contar meus sintomas",
+      "passed": true,
+      "mismatches": {},
+      "output": [
+        {
+          "response_type": "text",
+          "text": "O que você gostaria de registrar sobre como está se sentindo?"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "relatar_sintomas",
+          "confidence": 1,
+          "skill": "main skill"
+        }
+      ]
+    },
+    {
+      "case": "reformular_sem_gravar",
+      "input": "Não ficou claro o que preciso responder",
+      "passed": true,
+      "mismatches": {},
+      "output": [
+        {
+          "response_type": "text",
+          "text": "Vou perguntar de outro jeito. O que você gostaria de registrar sobre como está se sentindo?"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "repetir",
+          "confidence": 0.966828465461731,
+          "skill": "main skill"
+        }
+      ]
+    },
+    {
+      "case": "reformular_sem_gravar",
+      "input": "Você não entendeu o que eu pedi",
+      "passed": true,
+      "mismatches": {},
+      "output": [
+        {
+          "response_type": "text",
+          "text": "Vou perguntar de outro jeito. O que você gostaria de registrar sobre como está se sentindo?"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "frustracao",
+          "confidence": 0.8243091702461243,
+          "skill": "main skill"
+        }
+      ]
+    },
+    {
+      "case": "trocar_de_assunto",
+      "input": "Quero contar meus sintomas",
+      "passed": true,
+      "mismatches": {},
+      "output": [
+        {
+          "response_type": "text",
+          "text": "O que você gostaria de registrar sobre como está se sentindo?"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "relatar_sintomas",
+          "confidence": 1,
+          "skill": "main skill"
+        }
+      ]
+    },
+    {
+      "case": "trocar_de_assunto",
+      "input": "Gostaria de anotar o valor da pressão",
+      "passed": true,
+      "mismatches": {},
+      "output": [
+        {
+          "response_type": "text",
+          "text": "Informe a pressão completa em mmHg, por exemplo 120/80 mmHg."
+        }
+      ],
+      "intents": [
+        {
+          "intent": "informar_medicao",
+          "confidence": 0.7352585792541504,
+          "skill": "main skill"
+        }
+      ]
+    },
+    {
+      "case": "trocar_de_assunto",
+      "input": "120/80 mmHg",
+      "passed": true,
+      "mismatches": {},
+      "output": [
+        {
+          "response_type": "text",
+          "text": "Anotei 120/80 mmHg para a pressão. É esse o valor que você quis registrar?"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "informar_medicao",
+          "confidence": 0.827592670917511,
+          "skill": "main skill"
+        }
+      ]
+    },
+    {
+      "case": "trocar_de_assunto",
+      "input": "Quero acrescentar meu histórico familiar",
+      "passed": true,
+      "mismatches": {},
+      "output": [
+        {
+          "response_type": "text",
+          "text": "Que informação do seu histórico você quer acrescentar?"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "informar_historico",
+          "confidence": 0.9601340889930725,
+          "skill": "main skill"
+        }
+      ]
+    },
+    {
+      "case": "recusar_confirmacao",
+      "input": "72 bpm",
+      "passed": true,
+      "mismatches": {},
+      "output": [
+        {
+          "response_type": "text",
+          "text": "Anotei 72 bpm para os batimentos. Está certo?"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "informar_medicao",
+          "confidence": 0.6157447099685669,
+          "skill": "main skill"
+        }
+      ]
+    },
+    {
+      "case": "recusar_confirmacao",
+      "input": "Não",
+      "passed": true,
+      "mismatches": {},
+      "output": [
+        {
+          "response_type": "text",
+          "text": "Vamos ajustar. Qual parte do resumo precisa mudar?"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "negar",
+          "confidence": 1,
+          "skill": "main skill"
+        }
+      ]
+    },
+    {
+      "case": "recusar_confirmacao",
+      "input": "batimentos",
+      "passed": true,
+      "mismatches": {},
+      "output": [
+        {
+          "response_type": "text",
+          "text": "Informe a frequência com a unidade bpm."
+        }
+      ],
+      "intents": []
+    },
+    {
+      "case": "recusar_confirmacao",
+      "input": "78 bpm",
+      "passed": true,
+      "mismatches": {},
+      "output": [
+        {
+          "response_type": "text",
+          "text": "Anotei 78 bpm para os batimentos. Está certo?"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "informar_medicao",
+          "confidence": 0.38689014315605164,
+          "skill": "main skill"
+        }
+      ]
+    },
+    {
+      "case": "resumo_vazio",
+      "input": "Quero ver o resumo",
+      "passed": true,
+      "mismatches": {},
+      "output": [
+        {
+          "response_type": "text",
+          "text": "Seu resumo ainda está vazio. Você quer começar com um relato ou uma medição?"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "consultar_resumo",
+          "confidence": 0.9094343781471252,
+          "skill": "main skill"
+        }
+      ]
+    },
+    {
+      "case": "resumo_vazio",
+      "input": "Sim",
+      "passed": true,
+      "mismatches": {},
+      "output": [
+        {
+          "response_type": "text",
+          "text": "Ainda não há nada no resumo para confirmar. O que você quer registrar?"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "confirmar",
+          "confidence": 1,
+          "skill": "main skill"
+        }
+      ]
+    },
+    {
+      "case": "cancelar_preserva_dados",
+      "input": "72 bpm",
+      "passed": true,
+      "mismatches": {},
+      "output": [
+        {
+          "response_type": "text",
+          "text": "Anotei 72 bpm para os batimentos. Está certo?"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "informar_medicao",
+          "confidence": 0.6157447099685669,
+          "skill": "main skill"
+        }
+      ]
+    },
+    {
+      "case": "cancelar_preserva_dados",
+      "input": "Quero corrigir meu histórico",
+      "passed": true,
+      "mismatches": {},
+      "output": [
+        {
+          "response_type": "text",
+          "text": "Que informação do seu histórico você quer acrescentar?"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "corrigir_informacao",
+          "confidence": 0.956405758857727,
+          "skill": "main skill"
+        }
+      ]
+    },
+    {
+      "case": "cancelar_preserva_dados",
+      "input": "Quero cancelar essa pergunta",
+      "passed": true,
+      "mismatches": {},
+      "output": [
+        {
+          "response_type": "text",
+          "text": "Tudo bem, vamos deixar essa parte. O que já foi anotado continua no resumo. O que você quer fazer agora?"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "cancelar_etapa",
+          "confidence": 0.934057891368866,
+          "skill": "main skill"
+        }
+      ]
+    },
+    {
+      "case": "identidade_e_escopo",
+      "input": "Quero contar meus sintomas",
+      "passed": true,
+      "mismatches": {},
+      "output": [
+        {
+          "response_type": "text",
+          "text": "O que você gostaria de registrar sobre como está se sentindo?"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "relatar_sintomas",
+          "confidence": 1,
+          "skill": "main skill"
+        }
+      ]
+    },
+    {
+      "case": "identidade_e_escopo",
+      "input": "Você é um atendente humano?",
+      "passed": true,
+      "mismatches": {},
+      "output": [
+        {
+          "response_type": "text",
+          "text": "Sou um assistente virtual do projeto CardioIA. Posso ajudar a organizar informações, mas não sou profissional de saúde e este chat não tem atendimento humano."
+        }
+      ],
+      "intents": [
+        {
+          "intent": "identidade",
+          "confidence": 0.8877468705177307,
+          "skill": "main skill"
+        }
+      ]
+    },
+    {
+      "case": "identidade_e_escopo",
+      "input": "Me sugere um filme",
+      "passed": true,
+      "mismatches": {},
+      "output": [
+        {
+          "response_type": "text",
+          "text": "Por aqui consigo ajudar com relatos, medições e o resumo. Você quer continuar de onde paramos?"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "fora_escopo",
+          "confidence": 0.7532482743263245,
+          "skill": "main skill"
+        }
+      ]
+    },
+    {
+      "case": "limites",
+      "input": "Quero contar meus sintomas",
+      "passed": true,
+      "mismatches": {},
+      "output": [
+        {
+          "response_type": "text",
+          "text": "O que você gostaria de registrar sobre como está se sentindo?"
+        }
+      ],
+      "intents": [
+        {
+          "intent": "relatar_sintomas",
+          "confidence": 1,
+          "skill": "main skill"
+        }
+      ]
+    },
+    {
+      "case": "limites",
+      "input": "Qual medicamento você recomenda?",
+      "passed": true,
+      "mismatches": {},
+      "output": [
+        {
+          "response_type": "text",
+          "text": "Não posso diagnosticar, prescrever ou alterar tratamentos. Leve essas dúvidas a um profissional de saúde."
+        }
+      ],
+      "intents": [
+        {
+          "intent": "solicitar_conduta_medica",
+          "confidence": 0.8957515954971313,
+          "skill": "main skill"
+        }
+      ]
+    },
+    {
+      "case": "limites",
+      "input": "Preciso de socorro urgente",
+      "passed": true,
+      "mismatches": {},
+      "output": [
+        {
+          "response_type": "text",
+          "text": "Se você acredita estar em uma emergência, procure atendimento de urgência. Esta simulação não avalia risco clínico."
+        }
+      ],
+      "intents": [
+        {
+          "intent": "relatar_urgencia",
+          "confidence": 0.9795491695404053,
+          "skill": "main skill"
+        }
+      ]
+    }
+  ],
+  "note": "API Watson real; cenários sintéticos. Não avalia qualidade clínica nem todos os modos de formular uma mensagem."
+}

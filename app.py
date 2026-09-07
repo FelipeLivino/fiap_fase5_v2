@@ -11,6 +11,7 @@ from services.storage import Store
 from services.watson_service import WatsonService
 from services.gemini_service import GeminiService
 from services.clinical_summary import summarize
+from services.conversation_ui import suggestions
 
 
 def create_app(overrides=None, watson=None, gemini=None):
@@ -78,7 +79,8 @@ def create_app(overrides=None, watson=None, gemini=None):
         texts = [x['text'] for x in response.get('output', {}).get('generic', [])
                  if x.get('response_type') == 'text' and isinstance(x.get('text'), str)]
         return {'response': '\n'.join(texts) or 'Não reconheci essa entrada. Pode reformular?',
-                'summary': summary, 'action': data.get('app_action')}
+                'summary': summary, 'action': data.get('app_action'),
+                'suggestions': suggestions(data.get('etapa_atual'))}
 
     def start_new():
         old_token = session.get('conversation')

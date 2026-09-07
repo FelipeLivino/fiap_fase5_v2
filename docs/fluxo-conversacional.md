@@ -39,7 +39,39 @@ flowchart TD
 | Encerramento | `Quero terminar a conversa` | Finaliza fluxo; o resumo continua visível |
 | Reinício | Botão Nova conversa ou `Reinicie o atendimento` | Nova sessão remota e resumo limpo |
 
-Ajuda, resumo, correção, reinício e outros comandos globais precedem a captura de texto livre. Uma medição sem unidade recebe orientação de formato. Pressão e frequência devem ser enviadas em mensagens separadas: quando ambas estão na mesma mensagem, o primeiro nó de medição aplicável pode registrar somente uma delas.
+Ajuda, resumo, correção, reinício e outros comandos globais precedem a captura de texto livre. Uma medição sem unidade recebe orientação de formato. Pressão e frequência com unidades podem ser enviadas juntas: `120/80 mmHg e 72 bpm` registra os dois valores.
+
+## Critérios de conversação — revisão de 7 de setembro de 2026
+
+O diálogo passou a ter 22 intenções, 125 exemplos, seis entidades e 69 nós. O objetivo é permitir que a pessoa converse sem precisar decorar uma sequência de comandos. O assistente continua se apresentando como virtual, com a indicação de simulação preservada na interface.
+
+| Critério | Exemplo e comportamento esperado |
+| --- | --- |
+| Pergunta ligada à etapa atual | `Pode explicar de outro jeito?` retoma a pergunta pendente sem registrar a dúvida como relato |
+| Reconhecer frustração | `Você não entendeu o que eu pedi` reformula a pergunta e conserva os dados |
+| Permitir não responder | `Prefiro pular essa parte` encerra a coleta atual, sem preencher um dado novo |
+| Preservar incerteza | `Não lembro quando começou` deixa o período sem informação; não inventa uma data |
+| Agradecer sem encerrar | Um agradecimento isolado recebe resposta breve; durante a coleta, retoma a pergunta atual |
+| Trocar de assunto | Um pedido de medição durante a coleta de relato abre a etapa de medição, sem virar texto de sintoma |
+| Corrigir na própria mensagem | `Corrige a pressão para 125/82 mmHg` substitui esse campo, conserva os outros e retira a confirmação anterior |
+| Recusar confirmação | `Não` na conferência leva à escolha do campo a corrigir |
+| Não confirmar resumo vazio | `Sim` sem dados não cria um registro confirmado |
+| Receber duas medições | Pressão em mmHg e frequência em bpm na mesma mensagem aparecem juntas no resumo |
+| Cancelar somente a etapa | Cancelar a pergunta preserva informações registradas; Nova conversa limpa o contexto |
+| Explicar identidade e escopo | Perguntas sobre atendimento humano ou assuntos alheios recebem resposta explícita, sem serem salvas como histórico |
+| Oferecer atalhos relevantes | Os botões mudam conforme a resposta: confirmar/corrigir, escolher medição ou pular/reformular |
+
+As respostas usam frases curtas, perguntas específicas e confirmação do valor recebido. Nenhum botão preenche números fictícios em nome do usuário. Negação em um relato, como `Não sinto dor`, permanece no texto original.
+
+Validação reproduzível com a API Watson real:
+
+```sh
+docker compose exec app python tests/live_conversation.py
+```
+
+O roteiro cobre dez cenários e 31 turnos, incluindo os caminhos acima. O relatório fica em `/app/runtime/conversation-evaluation.json`; a evidência versionada está em `docs/evidence/conversation-evaluation.json`. Os casos que motivaram ajustes são regressões conhecidas, e não uma amostra cega independente. A classificação pode variar em outras formulações. Não há interpretação clínica, inferência automática de unidades ou garantia de compreensão de qualquer texto livre.
+
+Para atualizar novamente o rascunho deste projeto, execute `docker compose exec app python -m watson.update_dialog` após reconstruir a imagem. O script verifica o ambiente e a identificação do projeto, salva a versão anterior no volume e altera somente o diálogo. Aguarde o treinamento, execute a avaliação e reexporte com `python -m watson.export_skill`; copie o JSON e sua procedência para `watson/`. A atualização é feita com [Update skill da API IBM](https://cloud.ibm.com/docs/apis/assistant-v2#update-skill).
 
 ## Integração e limites verificados
 

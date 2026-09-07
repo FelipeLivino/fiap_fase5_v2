@@ -75,7 +75,7 @@ O planejamento completo e seu andamento estão em [PLANO_IMPLEMENTACAO.md](./PLA
 
 | Área | Entrega |
 | --- | --- |
-| Assistente conversacional | Watson Dialog com 14 intenções, 70 exemplos, cinco entidades e 34 nós |
+| Assistente conversacional | Watson Dialog com 22 intenções, 125 exemplos, seis entidades e 69 nós; correções diretas, recusa, reformulação e mudança de assunto |
 | Interface | Aplicação Flask com HTML, CSS e JavaScript, conversa e resumo para conferência |
 | Gestão de contexto | Sessão reutilizada durante a conversa, correção de campos e reinício |
 | Extração generativa | Fatos estruturados com valor, evidência literal e estado |
@@ -216,7 +216,7 @@ Quero registrar minha pressão
 
 Também estão disponíveis relato, histórico, correção, ajuda e reinício. O mesmo perfil do navegador compartilha a sessão entre abas; perfis distintos são isolados.
 
-O [fluxo conversacional](./docs/fluxo-conversacional.md) documenta os caminhos, estados e limites da coleta.
+O [fluxo conversacional](./docs/fluxo-conversacional.md) documenta os caminhos, estados e critérios da coleta. Você pode dizer “não lembro”, pular uma pergunta, agradecer sem encerrar e corrigir um valor na mesma mensagem. Pressão e frequência com unidades também podem ser informadas juntas. Os atalhos abaixo do chat acompanham a etapa atual.
 
 ### 6.3 Fonte e exportação
 

@@ -41,6 +41,17 @@ class ChatTests(unittest.TestCase):
     def test_start_is_idempotent(self):
         self.post('/api/chat/start'); self.post('/api/chat/start'); self.assertEqual(self.wa.counter,1)
 
+    def test_suggestions_follow_conversation_without_inserting_measurements(self):
+        self.post('/api/chat/start')
+        self.wa.sessions['1']['etapa_atual'] = 'pressao'
+        result = self.post('/api/chat', {'message': 'Pode explicar?'}).json
+        self.assertIn('Prefiro não responder', result['suggestions'])
+        self.assertIsNone(result['summary'])
+        self.wa.sessions['1']['etapa_atual'] = 'confirmacao'
+        result = self.post('/api/chat', {'message': 'Ver resumo'}).json
+        self.assertIn('Sim, está correto', result['suggestions'])
+        self.assertIn('Quero corrigir um dado', result['suggestions'])
+
     def test_context_survives_turns(self):
         self.post('/api/chat/start')
         self.post('/api/chat',{'message':'Relato: Não tenho dor'})

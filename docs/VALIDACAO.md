@@ -58,3 +58,11 @@ Quatro frases de avaliação tiveram diferenças: uma pergunta de ajuda e uma de
 Os materiais das aulas, o enunciado local, segredos e diretórios de execução estão ignorados pelo Git.
 
 Verificações adicionais ainda não realizadas: revisão em tela estreita, execução integral da matriz original, reimportação da exportação final em outra conta/máquina e variação entre gerações independentes do Gemini. As tarefas correspondentes permanecem abertas no plano.
+# Revisão da conversação — 7 de setembro de 2026
+
+- Diálogo atualizado no ambiente de rascunho usado pelo aplicativo: 22 intenções, 125 exemplos, seis entidades e 69 nós.
+- 27 testes automatizados de núcleo/extração aprovados, incluindo os atalhos conforme a etapa.
+- Dez cenários com 31 turnos aprovados na API Watson real, conforme [conversation-evaluation.json](./evidence/conversation-evaluation.json).
+- A primeira rodada identificou confusão entre confirmação e consulta de resumo e entre reformulação e recusa. Os ajustes foram reavaliados após o treinamento. Esses casos são regressões conhecidas, não uma avaliação cega.
+- Nova exportação oficial e hash registrados em `watson/export-provenance.json`. Cópias anteriores do diálogo foram preservadas no volume local antes das atualizações.
+- Esta revisão não reexecutou avaliações Gemini nem o robô. Os resultados abaixo continuam como registro histórico da entrega anterior.

@@ -1,6 +1,26 @@
 {
   "intents": [
     {
+      "intent": "agradecer",
+      "examples": [
+        {
+          "text": "Agradeço por explicar"
+        },
+        {
+          "text": "Muito obrigado mesmo"
+        },
+        {
+          "text": "Obrigada pela ajuda"
+        },
+        {
+          "text": "Obrigado"
+        },
+        {
+          "text": "Valeu"
+        }
+      ]
+    },
+    {
       "intent": "ajuda",
       "examples": [
         {
@@ -21,6 +41,26 @@
       ]
     },
     {
+      "intent": "cancelar_etapa",
+      "examples": [
+        {
+          "text": "Deixa pra lá"
+        },
+        {
+          "text": "Esquece essa pergunta"
+        },
+        {
+          "text": "Não quero mais registrar isso"
+        },
+        {
+          "text": "Quero cancelar essa parte"
+        },
+        {
+          "text": "Vamos falar de outra coisa"
+        }
+      ]
+    },
+    {
       "intent": "confirmar",
       "examples": [
         {
@@ -33,10 +73,22 @@
           "text": "Isso está certo"
         },
         {
+          "text": "Isso mesmo"
+        },
+        {
           "text": "Pode confirmar"
         },
         {
+          "text": "Pode salvar assim"
+        },
+        {
+          "text": "Sim"
+        },
+        {
           "text": "Sim, está correto"
+        },
+        {
+          "text": "Tá certo"
         }
       ]
     },
@@ -64,7 +116,16 @@
       "intent": "corrigir_informacao",
       "examples": [
         {
+          "text": "Errei os batimentos, foram 78 bpm"
+        },
+        {
           "text": "Informei errado"
+        },
+        {
+          "text": "Não está certo"
+        },
+        {
+          "text": "Na verdade a pressão foi 125/82 mmHg"
         },
         {
           "text": "Pode corrigir meu histórico?"
@@ -74,6 +135,9 @@
         },
         {
           "text": "Quero alterar meu relato"
+        },
+        {
+          "text": "Quero corrigir"
         },
         {
           "text": "Quero corrigir a medição"
@@ -141,6 +205,66 @@
       ]
     },
     {
+      "intent": "fora_escopo",
+      "examples": [
+        {
+          "text": "Me ajuda com minha lição de matemática"
+        },
+        {
+          "text": "Me conta uma piada"
+        },
+        {
+          "text": "Qual a previsão do tempo?"
+        },
+        {
+          "text": "Qual filme eu vejo hoje?"
+        },
+        {
+          "text": "Quem ganhou o jogo?"
+        }
+      ]
+    },
+    {
+      "intent": "frustracao",
+      "examples": [
+        {
+          "text": "Estou ficando irritado com esse chat"
+        },
+        {
+          "text": "Já falei isso"
+        },
+        {
+          "text": "Nada a ver com o que eu disse"
+        },
+        {
+          "text": "Você fica repetindo a mesma coisa"
+        },
+        {
+          "text": "Você não está entendendo"
+        }
+      ]
+    },
+    {
+      "intent": "identidade",
+      "examples": [
+        {
+          "text": "Estou falando com um robô?"
+        },
+        {
+          "text": "Quem está falando comigo?"
+        },
+        {
+          "text": "Quero falar com uma pessoa"
+        },
+        {
+          "text": "Você é médico?"
+        },
+        {
+          "text": "Você é uma pessoa?"
+        }
+      ]
+    },
+    {
       "intent": "informar_historico",
       "examples": [
         {
@@ -167,7 +291,16 @@
           "text": "Anotar frequência cardíaca"
         },
         {
+          "text": "Medi agora e deu 120/80 mmHg"
+        },
+        {
+          "text": "Meus batimentos deram 72 bpm"
+        },
+        {
           "text": "Posso registrar minha pressão arterial?"
+        },
+        {
+          "text": "Quero anotar uma medida"
         },
         {
           "text": "Quero informar meus batimentos"
@@ -177,6 +310,49 @@
         },
         {
           "text": "Tenho uma medição para informar"
+        }
+      ]
+    },
+    {
+      "intent": "negar",
+      "examples": [
+        {
+          "text": "Ainda não"
+        },
+        {
+          "text": "Não"
+        },
+        {
+          "text": "Não confirmo"
+        },
+        {
+          "text": "Não é isso"
+        },
+        {
+          "text": "Tá errado"
+        }
+      ]
+    },
+    {
+      "intent": "pular",
+      "examples": [
+        {
+          "text": "Não lembro"
+        },
+        {
+          "text": "Não quero contar isso"
+        },
+        {
+          "text": "Não sei"
+        },
+        {
+          "text": "Não sei informar"
+        },
+        {
+          "text": "Podemos pular essa pergunta?"
+        },
+        {
+          "text": "Prefiro não responder"
         }
       ]
     },
@@ -237,6 +413,35 @@
         },
         {
           "text": "Quero ajuda de emergência"
+        }
+      ]
+    },
+    {
+      "intent": "repetir",
+      "examples": [
+        {
+          "text": "A pergunta não ficou clara"
+        },
+        {
+          "text": "Fiquei confuso"
+        },
+        {
+          "text": "Não compreendi o que você perguntou"
+        },
+        {
+          "text": "Não entendi a pergunta"
+        },
+        {
+          "text": "Não sei o que preciso responder"
+        },
+        {
+          "text": "O que eu preciso escrever?"
+        },
+        {
+          "text": "Pode explicar de outro jeito?"
+        },
+        {
+          "text": "Pode repetir?"
         }
       ]
     },
@@ -314,6 +519,19 @@
           "synonyms": [
             "relato",
             "sintomas"
+          ]
+        }
+      ],
+      "fuzzy_match": false
+    },
+    {
+      "entity": "confirmacao_explicita",
+      "values": [
+        {
+          "type": "patterns",
+          "value": "confirmar",
+          "patterns": [
+            "(?i)^\\s*(?:conferi e )?confirmo(?: o resumo| os dados| as informações)?[.!]?\\s*$"
           ]
         }
       ],
@@ -418,6 +636,225 @@
   "dialog_nodes": [
     {
       "type": "standard",
+      "title": "Agradecer",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "De nada! Se quiser, podemos acrescentar algo ao resumo."
+              },
+              {
+                "text": "Por nada. Quer conferir o que ficou anotado?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0
+      },
+      "conditions": "#agradecer",
+      "dialog_node": "agradecer",
+      "previous_sibling": "corrigir_campo_historico"
+    },
+    {
+      "type": "standard",
+      "title": "Agradecer Confirmacao",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "De nada! O resumo está de acordo com o que você contou? Você pode confirmar ou dizer o que precisa mudar."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0
+      },
+      "conditions": "#agradecer && $etapa_atual == 'confirmacao'",
+      "dialog_node": "agradecer_confirmacao",
+      "previous_sibling": "repetir_confirmacao"
+    },
+    {
+      "type": "standard",
+      "title": "Agradecer Corrigir",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "De nada! Qual parte precisa mudar: relato, pressão, batimentos ou histórico?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0
+      },
+      "conditions": "#agradecer && $etapa_atual == 'corrigir'",
+      "dialog_node": "agradecer_corrigir",
+      "previous_sibling": "repetir_corrigir"
+    },
+    {
+      "type": "standard",
+      "title": "Agradecer Frequencia",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "De nada! Quantos batimentos por minuto o aparelho mostrou? Pode escrever, por exemplo: 72 bpm."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0
+      },
+      "conditions": "#agradecer && $etapa_atual == 'frequencia'",
+      "dialog_node": "agradecer_frequencia",
+      "previous_sibling": "repetir_frequencia"
+    },
+    {
+      "type": "standard",
+      "title": "Agradecer Historico",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "De nada! Que informação do seu histórico você quer acrescentar?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0
+      },
+      "conditions": "#agradecer && $etapa_atual == 'historico'",
+      "dialog_node": "agradecer_historico",
+      "previous_sibling": "repetir_historico"
+    },
+    {
+      "type": "standard",
+      "title": "Agradecer Inicio",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "De nada! Desde quando isso acontece? Pode ser algo como “desde ontem”. Se não lembrar, pode dizer."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0
+      },
+      "conditions": "#agradecer && $etapa_atual == 'inicio'",
+      "dialog_node": "agradecer_inicio",
+      "previous_sibling": "repetir_inicio"
+    },
+    {
+      "type": "standard",
+      "title": "Agradecer Pressao",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "De nada! Quais foram os dois números da pressão? Escreva como no aparelho, por exemplo: 120/80 mmHg."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0
+      },
+      "conditions": "#agradecer && $etapa_atual == 'pressao'",
+      "dialog_node": "agradecer_pressao",
+      "previous_sibling": "repetir_pressao"
+    },
+    {
+      "type": "standard",
+      "title": "Agradecer Relato",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "De nada! O que você gostaria de registrar sobre como está se sentindo?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0
+      },
+      "conditions": "#agradecer && $etapa_atual == 'relato'",
+      "dialog_node": "agradecer_relato",
+      "previous_sibling": "repetir_relato"
+    },
+    {
+      "type": "standard",
+      "title": "Agradecer Tipo",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "De nada! Você quer anotar a pressão ou os batimentos?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0
+      },
+      "conditions": "#agradecer && $etapa_atual == 'tipo'",
+      "dialog_node": "agradecer_tipo",
+      "previous_sibling": "repetir_tipo"
+    },
+    {
+      "type": "standard",
       "title": "Ajuda",
       "output": {
         "generic": [
@@ -448,7 +885,7 @@
           {
             "values": [
               {
-                "text": "Olá! Sou o CardioIA. Este é um atendimento acadêmico com dados fictícios. Posso registrar um relato, uma medição ou explicar termos. Como posso ajudar?"
+                "text": "Oi! Sou o CardioIA, um assistente virtual. Aqui usamos dados fictícios para organizar relatos e medições. O que você gostaria de anotar hoje?"
               }
             ],
             "response_type": "text",
@@ -467,13 +904,38 @@
     },
     {
       "type": "standard",
+      "title": "Cancelar Etapa",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Tudo bem, vamos deixar essa parte. O que já foi anotado continua no resumo. O que você quer fazer agora?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "livre"
+      },
+      "conditions": "#cancelar_etapa",
+      "dialog_node": "cancelar_etapa",
+      "previous_sibling": "identidade"
+    },
+    {
+      "type": "standard",
       "title": "Confirmar",
       "output": {
         "generic": [
           {
             "values": [
               {
-                "text": "Resumo confirmado por você. Deseja registrar mais alguma informação?"
+                "text": "Pronto, o resumo ficou confirmado. Quer acrescentar mais alguma coisa?"
               }
             ],
             "response_type": "text",
@@ -487,9 +949,9 @@
         "etapa_atual": "livre",
         "resumo_confirmado": true
       },
-      "conditions": "#confirmar && $etapa_atual == 'confirmacao'",
+      "conditions": "(#confirmar || @confirmacao_explicita) && $etapa_atual == 'confirmacao'",
       "dialog_node": "confirmar",
-      "previous_sibling": "resumo"
+      "previous_sibling": "confirmar_vazio"
     },
     {
       "type": "standard",
@@ -499,7 +961,7 @@
           {
             "values": [
               {
-                "text": "Primeiro consulte o resumo para conferir o que está sendo confirmado."
+                "text": "Antes de confirmar, vamos conferir o resumo. Você pode pedir “ver resumo”."
               }
             ],
             "response_type": "text",
@@ -511,9 +973,35 @@
         "app_action": null,
         "tentativas": 0
       },
-      "conditions": "#confirmar",
+      "conditions": "(#confirmar || @confirmacao_explicita)",
       "dialog_node": "confirmar_sem_contexto",
       "previous_sibling": "confirmar"
+    },
+    {
+      "type": "standard",
+      "title": "Confirmar Vazio",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Ainda não há nada no resumo para confirmar. O que você quer registrar?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "livre",
+        "resumo_confirmado": false
+      },
+      "conditions": "(#confirmar || @confirmacao_explicita) && !($relato_original || $pressao_informada || $frequencia_informada || $historico_declarado)",
+      "dialog_node": "confirmar_vazio",
+      "previous_sibling": "resumo"
     },
     {
       "type": "standard",
@@ -539,7 +1027,139 @@
       },
       "conditions": "#corrigir_informacao",
       "dialog_node": "corrigir",
-      "previous_sibling": "extrair"
+      "previous_sibling": "negar"
+    },
+    {
+      "type": "standard",
+      "title": "Corrigir Campo Frequencia",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Quantos batimentos por minuto o aparelho mostrou? Pode escrever, por exemplo: 72 bpm."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "frequencia",
+        "resumo_confirmado": false
+      },
+      "conditions": "#corrigir_informacao && @campo_correcao:frequencia",
+      "dialog_node": "corrigir_campo_frequencia",
+      "previous_sibling": "corrigir_campo_pressao"
+    },
+    {
+      "type": "standard",
+      "title": "Corrigir Campo Historico",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Que informação do seu histórico você quer acrescentar?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "historico",
+        "resumo_confirmado": false
+      },
+      "conditions": "#corrigir_informacao && @campo_correcao:historico",
+      "dialog_node": "corrigir_campo_historico",
+      "previous_sibling": "corrigir_campo_relato"
+    },
+    {
+      "type": "standard",
+      "title": "Corrigir Campo Pressao",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Quais foram os dois números da pressão? Escreva como no aparelho, por exemplo: 120/80 mmHg."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "pressao",
+        "resumo_confirmado": false
+      },
+      "conditions": "#corrigir_informacao && @campo_correcao:pressao",
+      "dialog_node": "corrigir_campo_pressao",
+      "previous_sibling": "corrigir_valor_frequencia"
+    },
+    {
+      "type": "standard",
+      "title": "Corrigir Campo Relato",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "O que você gostaria de registrar sobre como está se sentindo?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "relato",
+        "resumo_confirmado": false
+      },
+      "conditions": "#corrigir_informacao && @campo_correcao:relato",
+      "dialog_node": "corrigir_campo_relato",
+      "previous_sibling": "corrigir_campo_frequencia"
+    },
+    {
+      "type": "standard",
+      "title": "Corrigir Duas Medicoes",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Corrigi a pressão e os batimentos. Confira os dois valores no resumo antes de confirmar."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "confirmacao",
+        "pressao_informada": "<? @pressao_arterial.literal ?>",
+        "resumo_confirmado": false,
+        "frequencia_informada": "<? @frequencia_cardiaca.literal ?>"
+      },
+      "conditions": "#corrigir_informacao && @pressao_arterial && @frequencia_cardiaca",
+      "dialog_node": "corrigir_duas_medicoes",
+      "previous_sibling": "repetir_livre"
     },
     {
       "type": "standard",
@@ -614,7 +1234,7 @@
       },
       "conditions": "$etapa_atual == 'corrigir' && @campo_correcao:pressao",
       "dialog_node": "corrigir_pressao",
-      "previous_sibling": "saudacao"
+      "previous_sibling": "pedir_historico"
     },
     {
       "type": "standard",
@@ -643,13 +1263,67 @@
     },
     {
       "type": "standard",
+      "title": "Corrigir Valor Frequencia",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Corrigi a frequência para <? @frequencia_cardiaca.literal ?>. Ficou certo agora?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "confirmacao",
+        "resumo_confirmado": false,
+        "frequencia_informada": "<? @frequencia_cardiaca.literal ?>"
+      },
+      "conditions": "#corrigir_informacao && @frequencia_cardiaca",
+      "dialog_node": "corrigir_valor_frequencia",
+      "previous_sibling": "corrigir_valor_pressao"
+    },
+    {
+      "type": "standard",
+      "title": "Corrigir Valor Pressao",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Corrigi a pressão para <? @pressao_arterial.literal ?>. Ficou certo agora?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "confirmacao",
+        "pressao_informada": "<? @pressao_arterial.literal ?>",
+        "resumo_confirmado": false
+      },
+      "conditions": "#corrigir_informacao && @pressao_arterial",
+      "dialog_node": "corrigir_valor_pressao",
+      "previous_sibling": "corrigir_duas_medicoes"
+    },
+    {
+      "type": "standard",
       "title": "Encerrar",
       "output": {
         "generic": [
           {
             "values": [
               {
-                "text": "Conversa encerrada. Você pode iniciar um novo atendimento quando quiser."
+                "text": "Até mais! Seu resumo continua aqui para você conferir."
               }
             ],
             "response_type": "text",
@@ -674,7 +1348,7 @@
           {
             "values": [
               {
-                "text": "Use a aba Organizar relato para extrair informações com o Gemini. Você poderá revisar os trechos antes de incluí-los na conversa."
+                "text": "Se você já tem um texto, abra Organizar relato. Lá você pode conferir cada informação antes de trazer o texto para esta conversa."
               }
             ],
             "response_type": "text",
@@ -698,7 +1372,10 @@
           {
             "values": [
               {
-                "text": "Não entendi essa mensagem. Pode reformular? Você também pode pedir ajuda ou reiniciar."
+                "text": "Não consegui entender o que você quer fazer. Você pode dizer “anotar minha pressão” ou “ver resumo”, por exemplo."
+              },
+              {
+                "text": "Pode me dizer de outro jeito? Eu consigo anotar um relato, uma medição ou ajudar a corrigir o resumo."
               }
             ],
             "response_type": "text",
@@ -738,6 +1415,30 @@
       "conditions": "$tentativas >= 1",
       "dialog_node": "fallback_repetido",
       "previous_sibling": "formato_frequencia"
+    },
+    {
+      "type": "standard",
+      "title": "Fora Escopo",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Por aqui consigo ajudar com relatos, medições e o resumo. Você quer continuar de onde paramos?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0
+      },
+      "conditions": "#fora_escopo",
+      "dialog_node": "fora_escopo",
+      "previous_sibling": "cancelar_etapa"
     },
     {
       "type": "standard",
@@ -785,7 +1486,31 @@
       },
       "conditions": "$etapa_atual == 'pressao'",
       "dialog_node": "formato_pressao",
-      "previous_sibling": "pedir_historico"
+      "previous_sibling": "receber_historico"
+    },
+    {
+      "type": "standard",
+      "title": "Identidade",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Sou um assistente virtual do projeto CardioIA. Posso ajudar a organizar informações, mas não sou profissional de saúde e este chat não tem atendimento humano."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0
+      },
+      "conditions": "#identidade",
+      "dialog_node": "identidade",
+      "previous_sibling": "extrair"
     },
     {
       "type": "standard",
@@ -814,13 +1539,63 @@
     },
     {
       "type": "standard",
+      "title": "Negar",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Tudo bem. Você quer corrigir alguma informação ou deixar essa parte para depois?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0
+      },
+      "conditions": "#negar",
+      "dialog_node": "negar",
+      "previous_sibling": "negar_confirmacao"
+    },
+    {
+      "type": "standard",
+      "title": "Negar Confirmacao",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Vamos ajustar. Qual parte do resumo precisa mudar?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "corrigir",
+        "resumo_confirmado": false
+      },
+      "conditions": "#negar && $etapa_atual == 'confirmacao'",
+      "dialog_node": "negar_confirmacao",
+      "previous_sibling": "pular"
+    },
+    {
+      "type": "standard",
       "title": "Pedir Historico",
       "output": {
         "generic": [
           {
             "values": [
               {
-                "text": "Informe o histórico fictício que deseja registrar."
+                "text": "Que informação do seu histórico você quer acrescentar?"
               }
             ],
             "response_type": "text",
@@ -833,7 +1608,7 @@
         "tentativas": 0,
         "etapa_atual": "historico"
       },
-      "conditions": "#informar_historico",
+      "conditions": "#informar_historico && $etapa_atual != 'historico'",
       "dialog_node": "pedir_historico",
       "previous_sibling": "pedir_relato"
     },
@@ -895,7 +1670,7 @@
           {
             "values": [
               {
-                "text": "Conte como está se sentindo no cenário fictício."
+                "text": "O que você gostaria de registrar sobre como está se sentindo?"
               }
             ],
             "response_type": "text",
@@ -908,7 +1683,7 @@
         "tentativas": 0,
         "etapa_atual": "relato"
       },
-      "conditions": "#relatar_sintomas",
+      "conditions": "#relatar_sintomas && $etapa_atual != 'relato' && $etapa_atual != 'inicio'",
       "dialog_node": "pedir_relato",
       "previous_sibling": "sintoma_na_frase"
     },
@@ -939,13 +1714,93 @@
     },
     {
       "type": "standard",
+      "title": "Pular",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Tudo bem, você não precisa informar essa parte. Mantive o que já estava anotado. Quer ver o resumo ou registrar outra coisa?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "livre"
+      },
+      "conditions": "#pular",
+      "dialog_node": "pular",
+      "previous_sibling": "pular_inicio"
+    },
+    {
+      "type": "standard",
+      "title": "Pular Inicio",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Tudo bem. Vou deixar o período sem informação. Quer conferir o resumo?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "confirmacao",
+        "inicio_relatado": null,
+        "resumo_confirmado": false
+      },
+      "conditions": "#pular && $etapa_atual == 'inicio'",
+      "dialog_node": "pular_inicio",
+      "previous_sibling": "agradecer"
+    },
+    {
+      "type": "standard",
+      "title": "Receber Duas Medicoes",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Anotei a pressão de <? @pressao_arterial.literal ?> e os batimentos de <? @frequencia_cardiaca.literal ?>. Os dois valores estão certos?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "confirmacao",
+        "pressao_informada": "<? @pressao_arterial.literal ?>",
+        "resumo_confirmado": false,
+        "frequencia_informada": "<? @frequencia_cardiaca.literal ?>"
+      },
+      "conditions": "@pressao_arterial && @frequencia_cardiaca",
+      "dialog_node": "receber_duas_medicoes",
+      "previous_sibling": "saudacao"
+    },
+    {
+      "type": "standard",
       "title": "Receber Frequencia",
       "output": {
         "generic": [
           {
             "values": [
               {
-                "text": "Registrei a frequência informada. Consulte o resumo e confirme se está correto."
+                "text": "Anotei <? @frequencia_cardiaca.literal ?> para os batimentos. Está certo?"
               }
             ],
             "response_type": "text",
@@ -972,7 +1827,7 @@
           {
             "values": [
               {
-                "text": "Histórico declarado registrado. Confira o resumo e confirme ou peça uma correção."
+                "text": "Anotei seu histórico com as suas palavras. Quer conferir se ficou certo no resumo?"
               }
             ],
             "response_type": "text",
@@ -999,7 +1854,7 @@
           {
             "values": [
               {
-                "text": "Período registrado. Confira o resumo e confirme ou peça uma correção."
+                "text": "Anotei esse período junto com o relato. O resumo ficou de acordo com o que você contou?"
               }
             ],
             "response_type": "text",
@@ -1026,7 +1881,7 @@
           {
             "values": [
               {
-                "text": "Registrei a pressão informada. Consulte o resumo e confirme se está correto."
+                "text": "Anotei <? @pressao_arterial.literal ?> para a pressão. É esse o valor que você quis registrar?"
               }
             ],
             "response_type": "text",
@@ -1043,7 +1898,7 @@
       },
       "conditions": "@pressao_arterial",
       "dialog_node": "receber_pressao",
-      "previous_sibling": "corrigir_historico"
+      "previous_sibling": "receber_duas_medicoes"
     },
     {
       "type": "standard",
@@ -1053,7 +1908,7 @@
           {
             "values": [
               {
-                "text": "Relato registrado. A que período ele se refere?"
+                "text": "Desde quando isso acontece? Pode ser algo como “desde ontem”. Se não lembrar, pode dizer."
               }
             ],
             "response_type": "text",
@@ -1065,6 +1920,7 @@
         "app_action": null,
         "tentativas": 0,
         "etapa_atual": "inicio",
+        "inicio_relatado": null,
         "relato_original": "<? input.text ?>",
         "resumo_confirmado": false
       },
@@ -1099,13 +1955,229 @@
     },
     {
       "type": "standard",
+      "title": "Repetir Confirmacao",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Vou perguntar de outro jeito. O resumo está de acordo com o que você contou? Você pode confirmar ou dizer o que precisa mudar."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0
+      },
+      "conditions": "(#repetir || #frustracao) && $etapa_atual == 'confirmacao'",
+      "dialog_node": "repetir_confirmacao",
+      "previous_sibling": "agradecer_corrigir"
+    },
+    {
+      "type": "standard",
+      "title": "Repetir Corrigir",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Vou perguntar de outro jeito. Qual parte precisa mudar: relato, pressão, batimentos ou histórico?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0
+      },
+      "conditions": "(#repetir || #frustracao) && $etapa_atual == 'corrigir'",
+      "dialog_node": "repetir_corrigir",
+      "previous_sibling": "agradecer_historico"
+    },
+    {
+      "type": "standard",
+      "title": "Repetir Frequencia",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Vou perguntar de outro jeito. Quantos batimentos por minuto o aparelho mostrou? Pode escrever, por exemplo: 72 bpm."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0
+      },
+      "conditions": "(#repetir || #frustracao) && $etapa_atual == 'frequencia'",
+      "dialog_node": "repetir_frequencia",
+      "previous_sibling": "agradecer_pressao"
+    },
+    {
+      "type": "standard",
+      "title": "Repetir Historico",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Vou perguntar de outro jeito. Que informação do seu histórico você quer acrescentar?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0
+      },
+      "conditions": "(#repetir || #frustracao) && $etapa_atual == 'historico'",
+      "dialog_node": "repetir_historico",
+      "previous_sibling": "agradecer_inicio"
+    },
+    {
+      "type": "standard",
+      "title": "Repetir Inicio",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Vou perguntar de outro jeito. Desde quando isso acontece? Pode ser algo como “desde ontem”. Se não lembrar, pode dizer."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0
+      },
+      "conditions": "(#repetir || #frustracao) && $etapa_atual == 'inicio'",
+      "dialog_node": "repetir_inicio",
+      "previous_sibling": "agradecer_relato"
+    },
+    {
+      "type": "standard",
+      "title": "Repetir Livre",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Vamos por partes. Você quer anotar algo, ver o resumo ou corrigir uma informação?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0
+      },
+      "conditions": "#repetir || #frustracao",
+      "dialog_node": "repetir_livre",
+      "previous_sibling": "agradecer_confirmacao"
+    },
+    {
+      "type": "standard",
+      "title": "Repetir Pressao",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Vou perguntar de outro jeito. Quais foram os dois números da pressão? Escreva como no aparelho, por exemplo: 120/80 mmHg."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0
+      },
+      "conditions": "(#repetir || #frustracao) && $etapa_atual == 'pressao'",
+      "dialog_node": "repetir_pressao",
+      "previous_sibling": "fora_escopo"
+    },
+    {
+      "type": "standard",
+      "title": "Repetir Relato",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Vou perguntar de outro jeito. O que você gostaria de registrar sobre como está se sentindo?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0
+      },
+      "conditions": "(#repetir || #frustracao) && $etapa_atual == 'relato'",
+      "dialog_node": "repetir_relato",
+      "previous_sibling": "agradecer_tipo"
+    },
+    {
+      "type": "standard",
+      "title": "Repetir Tipo",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Vou perguntar de outro jeito. Você quer anotar a pressão ou os batimentos?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0
+      },
+      "conditions": "(#repetir || #frustracao) && $etapa_atual == 'tipo'",
+      "dialog_node": "repetir_tipo",
+      "previous_sibling": "agradecer_frequencia"
+    },
+    {
+      "type": "standard",
       "title": "Resumo",
       "output": {
         "generic": [
           {
             "values": [
               {
-                "text": "Confira o resumo ao lado. Campos vazios são informações não fornecidas. Está correto?"
+                "text": "Confira o resumo ao lado. O que não foi informado fica em branco. Está tudo certo?"
               }
             ],
             "response_type": "text",
@@ -1118,8 +2190,34 @@
         "tentativas": 0,
         "etapa_atual": "confirmacao"
       },
-      "conditions": "#consultar_resumo",
+      "conditions": "#consultar_resumo && !@confirmacao_explicita",
       "dialog_node": "resumo",
+      "previous_sibling": "resumo_vazio"
+    },
+    {
+      "type": "standard",
+      "title": "Resumo Vazio",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Seu resumo ainda está vazio. Você quer começar com um relato ou uma medição?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "livre",
+        "resumo_confirmado": false
+      },
+      "conditions": "#consultar_resumo && !@confirmacao_explicita && !($relato_original || $pressao_informada || $frequencia_informada || $historico_declarado)",
+      "dialog_node": "resumo_vazio",
       "previous_sibling": "corrigir"
     },
     {
@@ -1154,7 +2252,7 @@
           {
             "values": [
               {
-                "text": "Registrei seu relato exatamente como foi informado. A que período ele se refere?"
+                "text": "Desde quando isso acontece? Pode ser algo como “desde ontem”. Se não lembrar, pode dizer."
               }
             ],
             "response_type": "text",
@@ -1166,12 +2264,13 @@
         "app_action": null,
         "tentativas": 0,
         "etapa_atual": "inicio",
+        "inicio_relatado": null,
         "relato_original": "<? input.text ?>",
         "resumo_confirmado": false
       },
-      "conditions": "#relatar_sintomas && @sintoma",
+      "conditions": "#relatar_sintomas && @sintoma && $etapa_atual != 'inicio'",
       "dialog_node": "sintoma_na_frase",
-      "previous_sibling": "receber_historico"
+      "previous_sibling": "pedir_tipo"
     },
     {
       "type": "standard",
@@ -1245,7 +2344,7 @@
       },
       "conditions": "$etapa_atual == 'tipo' && @tipo_medicao:pressao",
       "dialog_node": "tipo_pressao",
-      "previous_sibling": "pedir_tipo"
+      "previous_sibling": "corrigir_historico"
     },
     {
       "type": "standard",
