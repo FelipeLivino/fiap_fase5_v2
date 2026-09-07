@@ -376,11 +376,13 @@ cap1-fase5-v2/
 | [Fluxo conversacional](./docs/fluxo-conversacional.md) | Caminhos, estados e limites do assistente |
 | [Exportação oficial Watson](./watson/assistant-skill.json) | Diálogo para importação |
 | [Procedência da exportação](./watson/export-provenance.json) | Origem e hash do JSON |
-| [Relatório do fluxo conversacional](./output/pdf/fluxo-conversacional.pdf) | PDF de duas páginas |
-| [Relatório Ir Além 1 — Extração](./output/pdf/ir-alem-1-extracao.pdf) | PDF de duas páginas |
-| [Relatório Ir Além 2 — Automação](./output/pdf/ir-alem-2-automacao.pdf) | PDF de duas páginas |
+| Relatório do fluxo conversacional | [Word editável](./output/word/fluxo-conversacional.docx) e [PDF](./output/pdf/fluxo-conversacional.pdf), duas páginas |
+| Relatório Ir Além 1 — Extração | [Word editável](./output/word/ir-alem-1-extracao.docx) e [PDF](./output/pdf/ir-alem-1-extracao.pdf), quatro páginas |
+| Relatório Ir Além 2 — Automação | [Word editável](./output/word/ir-alem-2-automacao.docx) e [PDF](./output/pdf/ir-alem-2-automacao.pdf), cinco páginas |
 | [Resultados e limites das verificações](./docs/VALIDACAO.md) | Evidências e pendências |
 | [Roteiro do vídeo](./docs/roteiro-video.md) | Sequência da apresentação |
+
+Os relatórios foram ampliados em 7 de setembro de 2026, com texto atualizado, exemplos, decisões de projeto e distinção entre resultados atuais e históricos. O relatório principal respeita o limite de uma a duas páginas do enunciado. Os PDFs foram exportados dos respectivos Word e as 11 páginas foram revisadas. Após editar um Word, exporte novamente seu PDF para manter as versões correspondentes.
 
 A publicação no GitHub será realizada pelo responsável pelo projeto. As contribuições individuais devem ser registradas antes do envio à faculdade.
 

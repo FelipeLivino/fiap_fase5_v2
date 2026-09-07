@@ -11,3 +11,10 @@ tmp/
 2TIAOA*.pdf
 enunciado.md
 *.log
+
+# Ferramentas locais de elaboração dos relatórios
+/docs/build_reports.py
+/docs/build_word_reports.py
+/docs/export_word_reports.ps1
+/docs/render_word_reports.py
+/docs/report_content.py
