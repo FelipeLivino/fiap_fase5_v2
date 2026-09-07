@@ -1,0 +1,300 @@
+{
+  "at": "2026-09-05T02:16:27.527931+00:00",
+  "passed": true,
+  "note": "APIs reais, cenários fictícios, verificação HTTP com dois clientes isolados.",
+  "steps": [
+    {
+      "path": "/api/chat/start",
+      "input": null,
+      "status": 200,
+      "output": {
+        "action": null,
+        "response": "Olá! Sou o CardioIA. Este é um atendimento acadêmico com dados fictícios. Posso registrar um relato, uma medição ou explicar termos. Como posso ajudar?",
+        "summary": null
+      }
+    },
+    {
+      "path": "/api/chat",
+      "input": {
+        "message": "Quero registrar minha pressão"
+      },
+      "status": 200,
+      "output": {
+        "response": "Informe a pressão completa em mmHg, por exemplo 120/80 mmHg.",
+        "summary": null
+      }
+    },
+    {
+      "path": "/api/chat",
+      "input": {
+        "message": "120/80 mmHg"
+      },
+      "status": 200,
+      "output": {
+        "response": "Registrei a pressão informada. Consulte o resumo e confirme se está correto.",
+        "summary": {
+          "confirmado_pelo_usuario": false,
+          "frequencia_cardiaca": null,
+          "historico_declarado": null,
+          "inicio_relatado": null,
+          "pressao_arterial": {
+            "diastolica": 80,
+            "sistolica": 120,
+            "texto_original": "120/80 mmHg",
+            "unidade": "mmHg"
+          },
+          "relato_original": null,
+          "sintomas_relatados": []
+        }
+      }
+    },
+    {
+      "path": "/api/chat",
+      "input": {
+        "message": "Minha frequência foi 72 bpm"
+      },
+      "status": 200,
+      "output": {
+        "response": "Registrei a frequência informada. Consulte o resumo e confirme se está correto.",
+        "summary": {
+          "confirmado_pelo_usuario": false,
+          "frequencia_cardiaca": {
+            "texto_original": "72 bpm",
+            "unidade": "bpm",
+            "valor": 72
+          },
+          "historico_declarado": null,
+          "inicio_relatado": null,
+          "pressao_arterial": {
+            "diastolica": 80,
+            "sistolica": 120,
+            "texto_original": "120/80 mmHg",
+            "unidade": "mmHg"
+          },
+          "relato_original": null,
+          "sintomas_relatados": []
+        }
+      }
+    },
+    {
+      "path": "/api/chat",
+      "input": {
+        "message": "Mostre o resumo"
+      },
+      "status": 200,
+      "output": {
+        "response": "Confira o resumo ao lado. Campos vazios são informações não fornecidas. Está correto?",
+        "summary": {
+          "confirmado_pelo_usuario": false,
+          "frequencia_cardiaca": {
+            "texto_original": "72 bpm",
+            "unidade": "bpm",
+            "valor": 72
+          },
+          "historico_declarado": null,
+          "inicio_relatado": null,
+          "pressao_arterial": {
+            "diastolica": 80,
+            "sistolica": 120,
+            "texto_original": "120/80 mmHg",
+            "unidade": "mmHg"
+          },
+          "relato_original": null,
+          "sintomas_relatados": []
+        }
+      }
+    },
+    {
+      "path": "/api/chat",
+      "input": {
+        "message": "Sim, está correto"
+      },
+      "status": 200,
+      "output": {
+        "response": "Resumo confirmado por você. Deseja registrar mais alguma informação?",
+        "summary": {
+          "confirmado_pelo_usuario": true,
+          "frequencia_cardiaca": {
+            "texto_original": "72 bpm",
+            "unidade": "bpm",
+            "valor": 72
+          },
+          "historico_declarado": null,
+          "inicio_relatado": null,
+          "pressao_arterial": {
+            "diastolica": 80,
+            "sistolica": 120,
+            "texto_original": "120/80 mmHg",
+            "unidade": "mmHg"
+          },
+          "relato_original": null,
+          "sintomas_relatados": []
+        }
+      }
+    },
+    {
+      "path": "/api/chat",
+      "input": {
+        "message": "Quero corrigir um dado"
+      },
+      "status": 200,
+      "output": {
+        "response": "Qual campo deseja corrigir: relato, pressão, frequência ou histórico?",
+        "summary": {
+          "confirmado_pelo_usuario": false,
+          "frequencia_cardiaca": {
+            "texto_original": "72 bpm",
+            "unidade": "bpm",
+            "valor": 72
+          },
+          "historico_declarado": null,
+          "inicio_relatado": null,
+          "pressao_arterial": {
+            "diastolica": 80,
+            "sistolica": 120,
+            "texto_original": "120/80 mmHg",
+            "unidade": "mmHg"
+          },
+          "relato_original": null,
+          "sintomas_relatados": []
+        }
+      }
+    },
+    {
+      "path": "/api/chat",
+      "input": {
+        "message": "pressão"
+      },
+      "status": 200,
+      "output": {
+        "response": "Informe a pressão completa em mmHg, por exemplo 120/80 mmHg.",
+        "summary": {
+          "confirmado_pelo_usuario": false,
+          "frequencia_cardiaca": {
+            "texto_original": "72 bpm",
+            "unidade": "bpm",
+            "valor": 72
+          },
+          "historico_declarado": null,
+          "inicio_relatado": null,
+          "pressao_arterial": {
+            "diastolica": 80,
+            "sistolica": 120,
+            "texto_original": "120/80 mmHg",
+            "unidade": "mmHg"
+          },
+          "relato_original": null,
+          "sintomas_relatados": []
+        }
+      }
+    },
+    {
+      "path": "/api/chat",
+      "input": {
+        "message": "125/82 mmHg"
+      },
+      "status": 200,
+      "output": {
+        "response": "Registrei a pressão informada. Consulte o resumo e confirme se está correto.",
+        "summary": {
+          "confirmado_pelo_usuario": false,
+          "frequencia_cardiaca": {
+            "texto_original": "72 bpm",
+            "unidade": "bpm",
+            "valor": 72
+          },
+          "historico_declarado": null,
+          "inicio_relatado": null,
+          "pressao_arterial": {
+            "diastolica": 82,
+            "sistolica": 125,
+            "texto_original": "125/82 mmHg",
+            "unidade": "mmHg"
+          },
+          "relato_original": null,
+          "sintomas_relatados": []
+        }
+      }
+    },
+    {
+      "path": "/api/chat/start",
+      "input": null,
+      "status": 200,
+      "output": {
+        "action": null,
+        "response": "Olá! Sou o CardioIA. Este é um atendimento acadêmico com dados fictícios. Posso registrar um relato, uma medição ou explicar termos. Como posso ajudar?",
+        "summary": null
+      }
+    },
+    {
+      "path": "/api/extract",
+      "input": {
+        "message": "Medi minha pressão: 120/80 mmHg. Não tenho dor. Minha frequência foi 72 bpm."
+      },
+      "status": 200,
+      "output": {
+        "cache": true,
+        "confirmacao_necessaria": true,
+        "fatos": [
+          {
+            "campo": "pressao_arterial",
+            "estado": "afirmado",
+            "evidencia": "Medi minha pressão: 120/80 mmHg.",
+            "valor": "120/80 mmHg"
+          },
+          {
+            "campo": "sintoma",
+            "estado": "negado",
+            "evidencia": "Não tenho dor.",
+            "valor": "dor"
+          },
+          {
+            "campo": "frequencia_cardiaca",
+            "estado": "afirmado",
+            "evidencia": "Minha frequência foi 72 bpm.",
+            "valor": "72 bpm"
+          }
+        ],
+        "model": "gemini-3.5-flash-lite",
+        "texto_original": "Medi minha pressão: 120/80 mmHg. Não tenho dor. Minha frequência foi 72 bpm."
+      }
+    },
+    {
+      "path": "/api/extract/confirm",
+      "input": null,
+      "status": 200,
+      "output": {
+        "action": null,
+        "response": "Confira o resumo ao lado. Campos vazios são informações não fornecidas. Está correto?",
+        "summary": {
+          "confirmado_pelo_usuario": false,
+          "frequencia_cardiaca": {
+            "texto_original": "72 bpm",
+            "unidade": "bpm",
+            "valor": 72
+          },
+          "historico_declarado": null,
+          "inicio_relatado": null,
+          "pressao_arterial": {
+            "diastolica": 82,
+            "sistolica": 125,
+            "texto_original": "125/82 mmHg",
+            "unidade": "mmHg"
+          },
+          "relato_original": "Medi minha pressão: 120/80 mmHg. Não tenho dor. Minha frequência foi 72 bpm.",
+          "sintomas_relatados": []
+        }
+      }
+    },
+    {
+      "path": "/api/chat/reset",
+      "input": null,
+      "status": 200,
+      "output": {
+        "action": null,
+        "response": "Olá! Sou o CardioIA. Este é um atendimento acadêmico com dados fictícios. Posso registrar um relato, uma medição ou explicar termos. Como posso ajudar?",
+        "summary": null
+      }
+    }
+  ]
+}

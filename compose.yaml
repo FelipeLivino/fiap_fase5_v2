@@ -1,0 +1,72 @@
+name: cardioia-fase5-v2
+services:
+  app:
+    build: .
+    ports:
+      - "127.0.0.1:${APP_PORT:-5000}:5000"
+    environment:
+      FLASK_SECRET_KEY: ${FLASK_SECRET_KEY:?Preencha FLASK_SECRET_KEY no .env}
+      WA_API_KEY: ${WA_API_KEY:-}
+      WA_URL: ${WA_URL:-}
+      WA_ASSISTANT_ID: ${WA_ASSISTANT_ID:-}
+      WA_ENVIRONMENT_ID: ${WA_ENVIRONMENT_ID:-}
+      WA_API_VERSION: ${WA_API_VERSION:-2024-08-25}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-3.5-flash-lite}
+      GEMINI_DAILY_LIMIT: ${GEMINI_DAILY_LIMIT:-500}
+      GEMINI_MIN_INTERVAL_SECONDS: ${GEMINI_MIN_INTERVAL_SECONDS:-10}
+    volumes:
+      - app_data:/app/runtime
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:5000/health', timeout=3)"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+    init: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop: [ALL]
+  mongo:
+    image: mongo:8.0
+    profiles: [automacao]
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: cardioia
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD:-}
+    volumes:
+      - mongo_data:/data/db
+    networks: [data]
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "quit(db.adminCommand({ping:1}).ok ? 0 : 1)"]
+      interval: 10s
+      timeout: 5s
+      retries: 8
+  robot:
+    build:
+      context: .
+      dockerfile: automation/Dockerfile
+    profiles: [automacao]
+    environment:
+      APP_DATA_DIR: /app/runtime
+      MONGO_HOST: mongo
+      MONGO_PASSWORD: ${MONGO_PASSWORD:-}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-3.5-flash-lite}
+      GEMINI_DAILY_LIMIT: ${GEMINI_DAILY_LIMIT:-500}
+      GEMINI_MIN_INTERVAL_SECONDS: ${GEMINI_MIN_INTERVAL_SECONDS:-10}
+      ROBOT_INTERVAL_SECONDS: ${ROBOT_INTERVAL_SECONDS:-60}
+    depends_on:
+      mongo:
+        condition: service_healthy
+    volumes:
+      - app_data:/app/runtime
+    networks: [default, data]
+    init: true
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+volumes:
+  app_data:
+  mongo_data:
+networks:
+  data:
+    internal: true

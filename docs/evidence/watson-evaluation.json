@@ -1,0 +1,302 @@
+{
+  "at": "2026-09-05T02:16:58.734782+00:00",
+  "cases": [
+    {
+      "input": "Boa noite, assistente",
+      "expected": "saudacao",
+      "predicted": "saudacao",
+      "confidence": 0.6735481023788452,
+      "correct": true
+    },
+    {
+      "input": "Oi, tudo bem por aí?",
+      "expected": "saudacao",
+      "predicted": "saudacao",
+      "confidence": 0.6342276930809021,
+      "correct": true
+    },
+    {
+      "input": "Olá, vamos conversar?",
+      "expected": "saudacao",
+      "predicted": "saudacao",
+      "confidence": 0.7452508807182312,
+      "correct": true
+    },
+    {
+      "input": "Me ensine a usar este assistente",
+      "expected": "ajuda",
+      "predicted": null,
+      "confidence": null,
+      "correct": false
+    },
+    {
+      "input": "Quais são as funções deste atendimento?",
+      "expected": "ajuda",
+      "predicted": "ajuda",
+      "confidence": 0.8039363026618958,
+      "correct": true
+    },
+    {
+      "input": "Como posso utilizar o CardioIA?",
+      "expected": "ajuda",
+      "predicted": "ajuda",
+      "confidence": 0.47238674759864807,
+      "correct": true
+    },
+    {
+      "input": "Ando sentindo palpitações ultimamente",
+      "expected": "relatar_sintomas",
+      "predicted": "relatar_sintomas",
+      "confidence": 0.9481095671653748,
+      "correct": true
+    },
+    {
+      "input": "Gostaria de descrever o que estou sentindo",
+      "expected": "relatar_sintomas",
+      "predicted": "relatar_sintomas",
+      "confidence": 0.8339712619781494,
+      "correct": true
+    },
+    {
+      "input": "Estou cansado e quero registrar isso",
+      "expected": "relatar_sintomas",
+      "predicted": "relatar_sintomas",
+      "confidence": 0.5837376713752747,
+      "correct": true
+    },
+    {
+      "input": "Gostaria de anotar o valor da pressão",
+      "expected": "informar_medicao",
+      "predicted": "informar_medicao",
+      "confidence": 0.5252419710159302,
+      "correct": true
+    },
+    {
+      "input": "Podemos salvar uma medida dos meus batimentos?",
+      "expected": "informar_medicao",
+      "predicted": "informar_medicao",
+      "confidence": 0.3692314922809601,
+      "correct": true
+    },
+    {
+      "input": "Vou registrar uma medição arterial",
+      "expected": "informar_medicao",
+      "predicted": "informar_medicao",
+      "confidence": 0.7346371412277222,
+      "correct": true
+    },
+    {
+      "input": "Desejo acrescentar meu histórico familiar",
+      "expected": "informar_historico",
+      "predicted": "informar_historico",
+      "confidence": 0.9616845846176147,
+      "correct": true
+    },
+    {
+      "input": "Vamos registrar meu histórico de saúde?",
+      "expected": "informar_historico",
+      "predicted": "informar_historico",
+      "confidence": 0.8847865462303162,
+      "correct": true
+    },
+    {
+      "input": "Tenho um histórico médico para relatar",
+      "expected": "informar_historico",
+      "predicted": "informar_historico",
+      "confidence": 0.7068789601325989,
+      "correct": true
+    },
+    {
+      "input": "Qual o significado da unidade bpm?",
+      "expected": "duvida_saude",
+      "predicted": "duvida_saude",
+      "confidence": 0.9385981559753418,
+      "correct": true
+    },
+    {
+      "input": "Pode explicar o que são batimentos por minuto?",
+      "expected": "duvida_saude",
+      "predicted": "duvida_saude",
+      "confidence": 0.482766330242157,
+      "correct": true
+    },
+    {
+      "input": "O que quer dizer mmHg?",
+      "expected": "duvida_saude",
+      "predicted": "duvida_saude",
+      "confidence": 0.8315783739089966,
+      "correct": true
+    },
+    {
+      "input": "Me diga qual medicamento devo usar",
+      "expected": "solicitar_conduta_medica",
+      "predicted": "solicitar_conduta_medica",
+      "confidence": 0.9579831957817078,
+      "correct": true
+    },
+    {
+      "input": "Faça o diagnóstico do meu problema",
+      "expected": "solicitar_conduta_medica",
+      "predicted": "solicitar_conduta_medica",
+      "confidence": 0.5385379195213318,
+      "correct": true
+    },
+    {
+      "input": "Devo suspender meu remédio?",
+      "expected": "solicitar_conduta_medica",
+      "predicted": "solicitar_conduta_medica",
+      "confidence": 0.5759430527687073,
+      "correct": true
+    },
+    {
+      "input": "Estou precisando de socorro urgente",
+      "expected": "relatar_urgencia",
+      "predicted": "relatar_urgencia",
+      "confidence": 0.9760493636131287,
+      "correct": true
+    },
+    {
+      "input": "É uma emergência e preciso de ajuda",
+      "expected": "relatar_urgencia",
+      "predicted": "relatar_urgencia",
+      "confidence": 0.9876638650894165,
+      "correct": true
+    },
+    {
+      "input": "Quero procurar atendimento de emergência",
+      "expected": "relatar_urgencia",
+      "predicted": "relatar_urgencia",
+      "confidence": 0.9592738151550293,
+      "correct": true
+    },
+    {
+      "input": "Exiba minhas informações reunidas",
+      "expected": "consultar_resumo",
+      "predicted": "consultar_resumo",
+      "confidence": 0.8305880427360535,
+      "correct": true
+    },
+    {
+      "input": "Quais dados eu já passei nesta conversa?",
+      "expected": "consultar_resumo",
+      "predicted": "consultar_resumo",
+      "confidence": 0.2216591089963913,
+      "correct": true
+    },
+    {
+      "input": "Gostaria de ver o resumo do atendimento",
+      "expected": "consultar_resumo",
+      "predicted": "consultar_resumo",
+      "confidence": 0.8450149297714233,
+      "correct": true
+    },
+    {
+      "input": "Sim, os dados estão certos",
+      "expected": "confirmar",
+      "predicted": "confirmar",
+      "confidence": 0.9007717370986938,
+      "correct": true
+    },
+    {
+      "input": "Pode considerar essas informações confirmadas",
+      "expected": "confirmar",
+      "predicted": "confirmar",
+      "confidence": 0.9063537120819092,
+      "correct": true
+    },
+    {
+      "input": "Conferi e confirmo o resumo",
+      "expected": "confirmar",
+      "predicted": "consultar_resumo",
+      "confidence": 0.7340276837348938,
+      "correct": false
+    },
+    {
+      "input": "Gostaria de retificar meu relato",
+      "expected": "corrigir_informacao",
+      "predicted": "corrigir_informacao",
+      "confidence": 0.7227952480316162,
+      "correct": true
+    },
+    {
+      "input": "Preciso alterar a pressão que passei",
+      "expected": "corrigir_informacao",
+      "predicted": "corrigir_informacao",
+      "confidence": 0.6592215895652771,
+      "correct": true
+    },
+    {
+      "input": "Meu histórico foi informado errado",
+      "expected": "corrigir_informacao",
+      "predicted": "corrigir_informacao",
+      "confidence": 0.9023010730743408,
+      "correct": true
+    },
+    {
+      "input": "Apague o contexto e comece outra conversa",
+      "expected": "reiniciar",
+      "predicted": "reiniciar",
+      "confidence": 0.26925796270370483,
+      "correct": true
+    },
+    {
+      "input": "Quero iniciar tudo novamente",
+      "expected": "reiniciar",
+      "predicted": "reiniciar",
+      "confidence": 0.7699342370033264,
+      "correct": true
+    },
+    {
+      "input": "Vamos começar uma conversa do zero",
+      "expected": "reiniciar",
+      "predicted": "saudacao",
+      "confidence": 0.5181300044059753,
+      "correct": false
+    },
+    {
+      "input": "Podemos finalizar por aqui",
+      "expected": "encerrar",
+      "predicted": null,
+      "confidence": null,
+      "correct": false
+    },
+    {
+      "input": "Pode terminar este atendimento",
+      "expected": "encerrar",
+      "predicted": "encerrar",
+      "confidence": 0.6626071333885193,
+      "correct": true
+    },
+    {
+      "input": "Até mais, encerre a conversa",
+      "expected": "encerrar",
+      "predicted": "encerrar",
+      "confidence": 0.5958877801895142,
+      "correct": true
+    },
+    {
+      "input": "Quero converter este texto em dados estruturados",
+      "expected": "extrair_relato",
+      "predicted": "extrair_relato",
+      "confidence": 0.8355538249015808,
+      "correct": true
+    },
+    {
+      "input": "Pode extrair os dados do meu texto clínico?",
+      "expected": "extrair_relato",
+      "predicted": "extrair_relato",
+      "confidence": 0.7588384747505188,
+      "correct": true
+    },
+    {
+      "input": "Gostaria de transformar meu relato em informações organizadas",
+      "expected": "extrair_relato",
+      "predicted": "extrair_relato",
+      "confidence": 0.9008451104164124,
+      "correct": true
+    }
+  ],
+  "correct": 38,
+  "total": 42,
+  "note": "Amostra acadêmica pequena de frases inéditas. Resultado de classificação não comprova qualidade clínica."
+}

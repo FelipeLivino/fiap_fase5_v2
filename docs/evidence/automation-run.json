@@ -1,0 +1,152 @@
+{
+  "counts": {
+    "measurements": 303,
+    "evaluations": 63,
+    "alerts": 11,
+    "runs": 21
+  },
+  "pending_events": 0,
+  "controlled_cases": [
+    {
+      "id": 301,
+      "expected_case": "desvio_injetado",
+      "label": "anomalia_estatistica",
+      "score": -0.19241088417603092,
+      "run_id": "2b6103aed3a14ab59e1c4a87fa3a8292",
+      "model_version": "0222d0a305a39c7e"
+    },
+    {
+      "id": 302,
+      "expected_case": "referencia",
+      "label": "sem_desvio_detectado",
+      "score": 0.12892999825987778,
+      "run_id": "2b6103aed3a14ab59e1c4a87fa3a8292",
+      "model_version": "0222d0a305a39c7e"
+    },
+    {
+      "id": 303,
+      "expected_case": "dado_ausente",
+      "label": "dado_invalido",
+      "score": null,
+      "run_id": "2b6103aed3a14ab59e1c4a87fa3a8292",
+      "model_version": "0222d0a305a39c7e"
+    }
+  ],
+  "recent_runs": [
+    {
+      "id": "f4594b33f41d44a1ba7efd5a3a2c0e00",
+      "started": "2026-09-05T02:04:38.775511+00:00",
+      "finished": "2026-09-05T02:04:38.872612+00:00",
+      "status": "concluida",
+      "processed": 0,
+      "error_code": null
+    },
+    {
+      "id": "57e71e88576a40628de5f37646b35c90",
+      "started": "2026-09-05T02:04:12.222150+00:00",
+      "finished": "2026-09-05T02:04:17.806596+00:00",
+      "status": "sincronizacao_pendente",
+      "processed": 0,
+      "error_code": "ServerSelectionTimeoutError"
+    },
+    {
+      "id": "ad0927ab0a1a4cf8b570b2ea34b306e4",
+      "started": "2026-09-05T02:04:04.899447+00:00",
+      "finished": "2026-09-05T02:04:04.981615+00:00",
+      "status": "concluida",
+      "processed": 0,
+      "error_code": null
+    },
+    {
+      "id": "469f6fdc100e47828419d58a5ee5c5d5",
+      "started": "2026-09-05T02:03:08.806985+00:00",
+      "finished": "2026-09-05T02:03:08.883398+00:00",
+      "status": "concluida",
+      "processed": 0,
+      "error_code": null
+    },
+    {
+      "id": "00bdbb206ac045ec85ad968c90b4daef",
+      "started": "2026-09-05T02:02:12.618472+00:00",
+      "finished": "2026-09-05T02:02:12.689508+00:00",
+      "status": "concluida",
+      "processed": 0,
+      "error_code": null
+    }
+  ],
+  "mongo_events": 66,
+  "messages": [
+    {
+      "_id": "texto-001",
+      "paciente_id": "SIM-001",
+      "status": "interpretada",
+      "text": "Minha frequência foi 72 bpm. Não tenho dor.",
+      "extraction": {
+        "fatos": [
+          {
+            "campo": "frequencia_cardiaca",
+            "valor": "72 bpm",
+            "evidencia": "Minha frequência foi 72 bpm.",
+            "estado": "afirmado"
+          },
+          {
+            "campo": "sintoma",
+            "valor": "dor",
+            "evidencia": "Não tenho dor.",
+            "estado": "negado"
+          }
+        ],
+        "model": "gemini-3.5-flash-lite",
+        "texto_original": "Minha frequência foi 72 bpm. Não tenho dor.",
+        "confirmacao_necessaria": true,
+        "cache": false
+      },
+      "run_id": "1783ea80e66e4fe9b48ab445fc3cdd0e",
+      "updated": "2026-09-05T01:57:08.041707+00:00"
+    },
+    {
+      "_id": "texto-002",
+      "paciente_id": "SIM-001",
+      "status": "interpretada",
+      "text": "Medi minha pressão: 120/80 mmHg.",
+      "extraction": {
+        "fatos": [
+          {
+            "campo": "pressao_arterial",
+            "valor": "120/80 mmHg",
+            "evidencia": "Medi minha pressão: 120/80 mmHg.",
+            "estado": "afirmado"
+          }
+        ],
+        "model": "gemini-3.5-flash-lite",
+        "texto_original": "Medi minha pressão: 120/80 mmHg.",
+        "confirmacao_necessaria": true,
+        "cache": false
+      },
+      "run_id": "40128420ee444fca8103d25f2b130b16",
+      "updated": "2026-09-05T01:58:05.627333+00:00"
+    },
+    {
+      "_id": "texto-003",
+      "paciente_id": "SIM-001",
+      "status": "interpretada",
+      "text": "Esqueci o tratamento ontem. Hoje quero conversar sobre isso.",
+      "extraction": {
+        "fatos": [
+          {
+            "campo": "adesao",
+            "valor": "Esqueci o tratamento ontem",
+            "evidencia": "Esqueci o tratamento ontem.",
+            "estado": "afirmado"
+          }
+        ],
+        "model": "gemini-3.5-flash-lite",
+        "texto_original": "Esqueci o tratamento ontem. Hoje quero conversar sobre isso.",
+        "confirmacao_necessaria": true,
+        "cache": false
+      },
+      "run_id": "1df7397838974d4b9c5acd3704762fe4",
+      "updated": "2026-09-05T02:00:15.924061+00:00"
+    }
+  ]
+}

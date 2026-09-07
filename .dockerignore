@@ -1,0 +1,14 @@
+.git
+.allai
+.codex
+.env
+.env.*
+.venv
+**/__pycache__
+runtime
+tmp
+2TIAOA*.pdf
+enunciado.md
+docs
+output
+PLANO_IMPLEMENTACAO.md

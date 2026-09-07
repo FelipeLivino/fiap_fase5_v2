@@ -1,0 +1,1281 @@
+{
+  "intents": [
+    {
+      "intent": "ajuda",
+      "examples": [
+        {
+          "text": "Como funciona?"
+        },
+        {
+          "text": "Me explique suas funções"
+        },
+        {
+          "text": "O que você consegue fazer?"
+        },
+        {
+          "text": "Preciso de ajuda para usar o chat"
+        },
+        {
+          "text": "Quais opções estão disponíveis?"
+        }
+      ]
+    },
+    {
+      "intent": "confirmar",
+      "examples": [
+        {
+          "text": "As informações estão corretas"
+        },
+        {
+          "text": "Confirmo os dados"
+        },
+        {
+          "text": "Isso está certo"
+        },
+        {
+          "text": "Pode confirmar"
+        },
+        {
+          "text": "Sim, está correto"
+        }
+      ]
+    },
+    {
+      "intent": "consultar_resumo",
+      "examples": [
+        {
+          "text": "Mostre o resumo"
+        },
+        {
+          "text": "O que já informei?"
+        },
+        {
+          "text": "Pode reunir minhas informações?"
+        },
+        {
+          "text": "Quero consultar o resumo"
+        },
+        {
+          "text": "Veja meus dados registrados"
+        }
+      ]
+    },
+    {
+      "intent": "corrigir_informacao",
+      "examples": [
+        {
+          "text": "Informei errado"
+        },
+        {
+          "text": "Pode corrigir meu histórico?"
+        },
+        {
+          "text": "Preciso corrigir um dado"
+        },
+        {
+          "text": "Quero alterar meu relato"
+        },
+        {
+          "text": "Quero corrigir a medição"
+        }
+      ]
+    },
+    {
+      "intent": "duvida_saude",
+      "examples": [
+        {
+          "text": "Explique o termo pressão"
+        },
+        {
+          "text": "O que é pressão arterial?"
+        },
+        {
+          "text": "O que significa bpm?"
+        },
+        {
+          "text": "O que significa frequência cardíaca?"
+        },
+        {
+          "text": "O que significa mmHg?"
+        }
+      ]
+    },
+    {
+      "intent": "encerrar",
+      "examples": [
+        {
+          "text": "Até logo"
+        },
+        {
+          "text": "Encerrar atendimento"
+        },
+        {
+          "text": "Obrigado, pode encerrar"
+        },
+        {
+          "text": "Quero terminar a conversa"
+        },
+        {
+          "text": "Tchau"
+        }
+      ]
+    },
+    {
+      "intent": "extrair_relato",
+      "examples": [
+        {
+          "text": "Extrair informações do relato"
+        },
+        {
+          "text": "Organize meu texto"
+        },
+        {
+          "text": "Quero organizar um texto clínico"
+        },
+        {
+          "text": "Quero usar a extração de informações"
+        },
+        {
+          "text": "Transformar um relato em JSON"
+        }
+      ]
+    },
+    {
+      "intent": "informar_historico",
+      "examples": [
+        {
+          "text": "Gostaria de acrescentar meu histórico"
+        },
+        {
+          "text": "Posso contar sobre meu histórico?"
+        },
+        {
+          "text": "Quero informar meu histórico de saúde"
+        },
+        {
+          "text": "Quero registrar meu histórico familiar"
+        },
+        {
+          "text": "Tenho informações sobre meu histórico"
+        }
+      ]
+    },
+    {
+      "intent": "informar_medicao",
+      "examples": [
+        {
+          "text": "Anotar frequência cardíaca"
+        },
+        {
+          "text": "Posso registrar minha pressão arterial?"
+        },
+        {
+          "text": "Quero informar meus batimentos"
+        },
+        {
+          "text": "Quero registrar minha pressão"
+        },
+        {
+          "text": "Tenho uma medição para informar"
+        }
+      ]
+    },
+    {
+      "intent": "reiniciar",
+      "examples": [
+        {
+          "text": "Limpe minha conversa"
+        },
+        {
+          "text": "Nova conversa"
+        },
+        {
+          "text": "Quero começar de novo"
+        },
+        {
+          "text": "Reinicie o atendimento"
+        },
+        {
+          "text": "Vamos reiniciar"
+        }
+      ]
+    },
+    {
+      "intent": "relatar_sintomas",
+      "examples": [
+        {
+          "text": "Estou com tontura hoje"
+        },
+        {
+          "text": "Quero contar meus sintomas"
+        },
+        {
+          "text": "Quero relatar como estou me sentindo"
+        },
+        {
+          "text": "Sinto palpitações"
+        },
+        {
+          "text": "Tenho sentido cansaço"
+        }
+      ]
+    },
+    {
+      "intent": "relatar_urgencia",
+      "examples": [
+        {
+          "text": "Estou em uma emergência"
+        },
+        {
+          "text": "Isso é uma urgência"
+        },
+        {
+          "text": "Preciso de atendimento urgente"
+        },
+        {
+          "text": "Preciso de socorro agora"
+        },
+        {
+          "text": "Quero ajuda de emergência"
+        }
+      ]
+    },
+    {
+      "intent": "saudacao",
+      "examples": [
+        {
+          "text": "Boa tarde"
+        },
+        {
+          "text": "Bom dia"
+        },
+        {
+          "text": "Gostaria de iniciar uma conversa"
+        },
+        {
+          "text": "Oi, quero começar"
+        },
+        {
+          "text": "Olá"
+        }
+      ]
+    },
+    {
+      "intent": "solicitar_conduta_medica",
+      "examples": [
+        {
+          "text": "Posso parar de tomar o medicamento?"
+        },
+        {
+          "text": "Qual dose devo usar?"
+        },
+        {
+          "text": "Qual é minha doença?"
+        },
+        {
+          "text": "Qual remédio devo tomar?"
+        },
+        {
+          "text": "Você pode me dar um diagnóstico?"
+        }
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "entity": "campo_correcao",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "frequencia",
+          "synonyms": [
+            "batimentos",
+            "frequência"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "historico",
+          "synonyms": [
+            "histórico"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "pressao",
+          "synonyms": [
+            "pressão",
+            "pressão arterial"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "relato",
+          "synonyms": [
+            "relato",
+            "sintomas"
+          ]
+        }
+      ],
+      "fuzzy_match": false
+    },
+    {
+      "entity": "frequencia_cardiaca",
+      "values": [
+        {
+          "type": "patterns",
+          "value": "medicao",
+          "patterns": [
+            "(?i)\\b\\d{2,3}\\s*bpm\\b"
+          ]
+        }
+      ],
+      "fuzzy_match": false
+    },
+    {
+      "entity": "pressao_arterial",
+      "values": [
+        {
+          "type": "patterns",
+          "value": "medicao",
+          "patterns": [
+            "(?i)\\b\\d{2,3}\\s*/\\s*\\d{2,3}\\s*mmhg\\b"
+          ]
+        }
+      ],
+      "fuzzy_match": false
+    },
+    {
+      "entity": "sintoma",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "cansaco",
+          "synonyms": [
+            "cansaço",
+            "cansado"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "dor",
+          "synonyms": [
+            "dor no peito"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "palpitacoes",
+          "synonyms": [
+            "palpitação",
+            "palpitações"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "tontura",
+          "synonyms": [
+            "tonta",
+            "tonto"
+          ]
+        }
+      ],
+      "fuzzy_match": false
+    },
+    {
+      "entity": "tipo_medicao",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "frequencia",
+          "synonyms": [
+            "batimentos",
+            "bpm",
+            "frequência",
+            "frequência cardíaca"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "pressao",
+          "synonyms": [
+            "mmHg",
+            "pressão",
+            "pressão arterial"
+          ]
+        }
+      ],
+      "fuzzy_match": false
+    }
+  ],
+  "metadata": {
+    "project": "CardioIA Fase 5 v2",
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2024-08-25"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Ajuda",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Posso registrar relatos fictícios, pressão em mmHg, frequência em bpm e histórico declarado. Também posso mostrar ou corrigir o resumo."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0
+      },
+      "conditions": "#ajuda",
+      "dialog_node": "ajuda",
+      "previous_sibling": "limites"
+    },
+    {
+      "type": "standard",
+      "title": "Boas Vindas",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Olá! Sou o CardioIA. Este é um atendimento acadêmico com dados fictícios. Posso registrar um relato, uma medição ou explicar termos. Como posso ajudar?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "livre",
+        "resumo_confirmado": false
+      },
+      "conditions": "welcome",
+      "dialog_node": "boas_vindas"
+    },
+    {
+      "type": "standard",
+      "title": "Confirmar",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Resumo confirmado por você. Deseja registrar mais alguma informação?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "livre",
+        "resumo_confirmado": true
+      },
+      "conditions": "#confirmar && $etapa_atual == 'confirmacao'",
+      "dialog_node": "confirmar",
+      "previous_sibling": "resumo"
+    },
+    {
+      "type": "standard",
+      "title": "Confirmar Sem Contexto",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Primeiro consulte o resumo para conferir o que está sendo confirmado."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0
+      },
+      "conditions": "#confirmar",
+      "dialog_node": "confirmar_sem_contexto",
+      "previous_sibling": "confirmar"
+    },
+    {
+      "type": "standard",
+      "title": "Corrigir",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Qual campo deseja corrigir: relato, pressão, frequência ou histórico?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "corrigir",
+        "resumo_confirmado": false
+      },
+      "conditions": "#corrigir_informacao",
+      "dialog_node": "corrigir",
+      "previous_sibling": "extrair"
+    },
+    {
+      "type": "standard",
+      "title": "Corrigir Frequencia",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Informe a frequência com a unidade bpm."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "frequencia"
+      },
+      "conditions": "$etapa_atual == 'corrigir' && @campo_correcao:frequencia",
+      "dialog_node": "corrigir_frequencia",
+      "previous_sibling": "corrigir_pressao"
+    },
+    {
+      "type": "standard",
+      "title": "Corrigir Historico",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Informe o histórico corrigido."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "historico"
+      },
+      "conditions": "$etapa_atual == 'corrigir' && @campo_correcao:historico",
+      "dialog_node": "corrigir_historico",
+      "previous_sibling": "corrigir_relato"
+    },
+    {
+      "type": "standard",
+      "title": "Corrigir Pressao",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Informe a pressão completa em mmHg, por exemplo 120/80 mmHg."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "pressao"
+      },
+      "conditions": "$etapa_atual == 'corrigir' && @campo_correcao:pressao",
+      "dialog_node": "corrigir_pressao",
+      "previous_sibling": "saudacao"
+    },
+    {
+      "type": "standard",
+      "title": "Corrigir Relato",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Escreva o relato corrigido."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "relato"
+      },
+      "conditions": "$etapa_atual == 'corrigir' && @campo_correcao:relato",
+      "dialog_node": "corrigir_relato",
+      "previous_sibling": "corrigir_frequencia"
+    },
+    {
+      "type": "standard",
+      "title": "Encerrar",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Conversa encerrada. Você pode iniciar um novo atendimento quando quiser."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "livre"
+      },
+      "conditions": "#encerrar",
+      "dialog_node": "encerrar",
+      "previous_sibling": "reiniciar"
+    },
+    {
+      "type": "standard",
+      "title": "Extrair",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Use a aba Organizar relato para extrair informações com o Gemini. Você poderá revisar os trechos antes de incluí-los na conversa."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0
+      },
+      "conditions": "#extrair_relato",
+      "dialog_node": "extrair",
+      "previous_sibling": "ajuda"
+    },
+    {
+      "type": "standard",
+      "title": "Fallback",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Não entendi essa mensagem. Pode reformular? Você também pode pedir ajuda ou reiniciar."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": "<? $tentativas + 1 ?>"
+      },
+      "conditions": "anything_else",
+      "dialog_node": "fallback",
+      "previous_sibling": "fallback_repetido"
+    },
+    {
+      "type": "standard",
+      "title": "Fallback Repetido",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Vamos escolher um caminho: relatar sintomas, registrar uma medição, consultar resumo ou reiniciar?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "livre"
+      },
+      "conditions": "$tentativas >= 1",
+      "dialog_node": "fallback_repetido",
+      "previous_sibling": "formato_frequencia"
+    },
+    {
+      "type": "standard",
+      "title": "Formato Frequencia",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Informe o valor acompanhado de bpm. Você também pode pedir ajuda ou reiniciar."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0
+      },
+      "conditions": "$etapa_atual == 'frequencia'",
+      "dialog_node": "formato_frequencia",
+      "previous_sibling": "formato_pressao"
+    },
+    {
+      "type": "standard",
+      "title": "Formato Pressao",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Não consegui registrar esse formato. Informe os dois valores e a unidade, por exemplo 120/80 mmHg. Você também pode pedir ajuda ou reiniciar."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0
+      },
+      "conditions": "$etapa_atual == 'pressao'",
+      "dialog_node": "formato_pressao",
+      "previous_sibling": "pedir_historico"
+    },
+    {
+      "type": "standard",
+      "title": "Limites",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Não posso diagnosticar, prescrever ou alterar tratamentos. Leve essas dúvidas a um profissional de saúde."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "livre"
+      },
+      "conditions": "#solicitar_conduta_medica",
+      "dialog_node": "limites",
+      "previous_sibling": "encerrar"
+    },
+    {
+      "type": "standard",
+      "title": "Pedir Historico",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Informe o histórico fictício que deseja registrar."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "historico"
+      },
+      "conditions": "#informar_historico",
+      "dialog_node": "pedir_historico",
+      "previous_sibling": "pedir_relato"
+    },
+    {
+      "type": "standard",
+      "title": "Pedir Medicao Frequencia",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Informe a frequência com a unidade bpm."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "frequencia"
+      },
+      "conditions": "#informar_medicao && @tipo_medicao:frequencia",
+      "dialog_node": "pedir_medicao_frequencia",
+      "previous_sibling": "pedir_medicao_pressao"
+    },
+    {
+      "type": "standard",
+      "title": "Pedir Medicao Pressao",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Informe a pressão completa em mmHg, por exemplo 120/80 mmHg."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "pressao"
+      },
+      "conditions": "#informar_medicao && @tipo_medicao:pressao",
+      "dialog_node": "pedir_medicao_pressao",
+      "previous_sibling": "receber_frequencia"
+    },
+    {
+      "type": "standard",
+      "title": "Pedir Relato",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Conte como está se sentindo no cenário fictício."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "relato"
+      },
+      "conditions": "#relatar_sintomas",
+      "dialog_node": "pedir_relato",
+      "previous_sibling": "sintoma_na_frase"
+    },
+    {
+      "type": "standard",
+      "title": "Pedir Tipo",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Deseja registrar pressão arterial ou frequência cardíaca?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "tipo"
+      },
+      "conditions": "#informar_medicao",
+      "dialog_node": "pedir_tipo",
+      "previous_sibling": "pedir_medicao_frequencia"
+    },
+    {
+      "type": "standard",
+      "title": "Receber Frequencia",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Registrei a frequência informada. Consulte o resumo e confirme se está correto."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "confirmacao",
+        "resumo_confirmado": false,
+        "frequencia_informada": "<? @frequencia_cardiaca.literal ?>"
+      },
+      "conditions": "@frequencia_cardiaca",
+      "dialog_node": "receber_frequencia",
+      "previous_sibling": "receber_pressao"
+    },
+    {
+      "type": "standard",
+      "title": "Receber Historico",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Histórico declarado registrado. Confira o resumo e confirme ou peça uma correção."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "confirmacao",
+        "resumo_confirmado": false,
+        "historico_declarado": "<? input.text ?>"
+      },
+      "conditions": "$etapa_atual == 'historico'",
+      "dialog_node": "receber_historico",
+      "previous_sibling": "receber_inicio"
+    },
+    {
+      "type": "standard",
+      "title": "Receber Inicio",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Período registrado. Confira o resumo e confirme ou peça uma correção."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "confirmacao",
+        "inicio_relatado": "<? input.text ?>",
+        "resumo_confirmado": false
+      },
+      "conditions": "$etapa_atual == 'inicio'",
+      "dialog_node": "receber_inicio",
+      "previous_sibling": "receber_relato"
+    },
+    {
+      "type": "standard",
+      "title": "Receber Pressao",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Registrei a pressão informada. Consulte o resumo e confirme se está correto."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "confirmacao",
+        "pressao_informada": "<? @pressao_arterial.literal ?>",
+        "resumo_confirmado": false
+      },
+      "conditions": "@pressao_arterial",
+      "dialog_node": "receber_pressao",
+      "previous_sibling": "corrigir_historico"
+    },
+    {
+      "type": "standard",
+      "title": "Receber Relato",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Relato registrado. A que período ele se refere?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "inicio",
+        "relato_original": "<? input.text ?>",
+        "resumo_confirmado": false
+      },
+      "conditions": "$etapa_atual == 'relato'",
+      "dialog_node": "receber_relato",
+      "previous_sibling": "tipo_frequencia"
+    },
+    {
+      "type": "standard",
+      "title": "Reiniciar",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Vamos iniciar uma nova conversa."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": "reiniciar",
+        "tentativas": 0,
+        "etapa_atual": "livre"
+      },
+      "conditions": "#reiniciar",
+      "dialog_node": "reiniciar",
+      "previous_sibling": "urgencia"
+    },
+    {
+      "type": "standard",
+      "title": "Resumo",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Confira o resumo ao lado. Campos vazios são informações não fornecidas. Está correto?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "confirmacao"
+      },
+      "conditions": "#consultar_resumo",
+      "dialog_node": "resumo",
+      "previous_sibling": "corrigir"
+    },
+    {
+      "type": "standard",
+      "title": "Saudacao",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Olá! Quer registrar um relato, uma medição ou consultar suas informações?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0
+      },
+      "conditions": "#saudacao",
+      "dialog_node": "saudacao",
+      "previous_sibling": "termos"
+    },
+    {
+      "type": "standard",
+      "title": "Sintoma Na Frase",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Registrei seu relato exatamente como foi informado. A que período ele se refere?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "inicio",
+        "relato_original": "<? input.text ?>",
+        "resumo_confirmado": false
+      },
+      "conditions": "#relatar_sintomas && @sintoma",
+      "dialog_node": "sintoma_na_frase",
+      "previous_sibling": "receber_historico"
+    },
+    {
+      "type": "standard",
+      "title": "Termos",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Pressão arterial descreve a pressão do sangue nas artérias e é expressa em mmHg. Frequência cardíaca é o número de batimentos por minuto (bpm). Estes termos não determinam um diagnóstico."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0
+      },
+      "conditions": "#duvida_saude",
+      "dialog_node": "termos",
+      "previous_sibling": "confirmar_sem_contexto"
+    },
+    {
+      "type": "standard",
+      "title": "Tipo Frequencia",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Informe a frequência com a unidade bpm."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "frequencia"
+      },
+      "conditions": "$etapa_atual == 'tipo' && @tipo_medicao:frequencia",
+      "dialog_node": "tipo_frequencia",
+      "previous_sibling": "tipo_pressao"
+    },
+    {
+      "type": "standard",
+      "title": "Tipo Pressao",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Informe a pressão completa em mmHg."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "pressao"
+      },
+      "conditions": "$etapa_atual == 'tipo' && @tipo_medicao:pressao",
+      "dialog_node": "tipo_pressao",
+      "previous_sibling": "pedir_tipo"
+    },
+    {
+      "type": "standard",
+      "title": "Urgencia",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Se você acredita estar em uma emergência, procure atendimento de urgência. Esta simulação não avalia risco clínico."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "app_action": null,
+        "tentativas": 0,
+        "etapa_atual": "livre"
+      },
+      "conditions": "#relatar_urgencia",
+      "dialog_node": "urgencia",
+      "previous_sibling": "boas_vindas"
+    }
+  ],
+  "counterexamples": [],
+  "learning_opt_out": false,
+  "name": "CardioIA Dialog v2",
+  "description": "Simulação acadêmica com dados fictícios. Capítulo 10, pp. 17-37.",
+  "language": "pt-br"
+}

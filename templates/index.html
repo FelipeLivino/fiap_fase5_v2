@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="csrf-token" content="{{ csrf }}">
+  <title>CardioIA · Assistente conversacional</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <script src="{{ url_for('static', filename='js/chat.js') }}" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="/" aria-label="CardioIA início"><span class="brand-icon">♥</span> Cardio<span>IA</span></a>
+    <span class="eyebrow">ESPAÇO DE CUIDADO</span>
+    <nav aria-label="Seções">
+      <button class="nav active" data-panel="conversation" aria-current="page"><span>◌</span> Conversa</button>
+      <button class="nav" data-panel="extraction"><span>▤</span> Organizar relato</button>
+      <button class="nav" data-panel="automation"><span>◎</span> Monitoramento</button>
+    </nav>
+    <div class="sidebar-bottom"><span class="pill">PROJETO ACADÊMICO</span><p>Um espaço para entender<br>e organizar informações.</p><small>FIAP · Fase 5</small></div>
+  </aside>
+  <main>
+    <header class="topbar"><span>Assistente cardiológico</span><span class="simulation"><i></i> Ambiente de simulação</span></header>
+    <div class="page-heading"><div><span class="eyebrow">CARDIOIA / SEU ATENDIMENTO</span><h1>Vamos conversar sobre você.</h1><p>Conte com uma conversa simples para organizar suas informações.</p></div><span class="heading-icon" aria-hidden="true">♡</span></div>
+    <div class="notice"><strong>Somente dados fictícios.</strong> Este protótipo organiza relatos e não fornece diagnóstico ou prescrição.</div>
+    <section id="conversation" class="panel">
+      <div class="workspace">
+        <article class="chat-card">
+          <div class="card-header"><div class="avatar">♥</div><div><h2>Seu assistente CardioIA</h2><span id="watson-status" class="subtle">Verificando conexão…</span></div><button id="reset" class="button ghost">Nova conversa</button></div>
+          <div id="messages" role="log" aria-live="polite" aria-label="Histórico da conversa">
+            <div class="intro"><span class="intro-symbol">♡</span><h3>Um primeiro passo para<br>organizar seu cuidado.</h3><p>Registre um relato, informe uma medição<br>ou esclareça um termo de saúde.</p></div>
+          </div>
+          <div class="suggestions"><button data-message="Quero relatar como estou me sentindo">Relatar como me sinto</button><button data-message="Quero registrar minha pressão">Registrar uma medição</button><button data-message="O que você consegue fazer?">Como funciona?</button></div>
+          <form id="chat-form"><label class="sr-only" for="message">Sua mensagem</label><textarea id="message" rows="1" maxlength="2000" placeholder="Escreva sua mensagem…"></textarea><button class="button primary" id="send" type="submit" aria-label="Enviar mensagem">Enviar ↑</button></form>
+          <div class="composer-note">Enter para enviar · Shift + Enter para uma nova linha</div>
+        </article>
+        <aside class="summary-card"><span class="eyebrow">AO LONGO DA CONVERSA</span><h2>Seu resumo</h2><p>As informações que você compartilhar ficam organizadas aqui.</p><div id="summary"><div class="empty-icon">▤</div><p class="empty">Ainda não há informações.<br>Comece uma conversa para registrar.</p></div><div class="summary-footer">Confira os dados antes de confirmar.<br>Você pode pedir uma correção no chat.</div></aside>
+      </div>
+    </section>
+    <section id="extraction" class="panel" hidden>
+      <div class="extraction-layout"><article class="surface"><span class="eyebrow">IR ALÉM 1 · IA GENERATIVA</span><h2>Do relato à informação.</h2><p>Cole um texto fictício. O Gemini organiza os trechos informados para sua revisão.</p><form id="extract-form"><label for="clinical-text">Relato clínico fictício</label><textarea id="clinical-text" rows="8" maxlength="6000" placeholder="Exemplo: Medi minha pressão: 120/80 mmHg. Não tenho dor. Minha frequência foi 72 bpm."></textarea><div class="form-actions"><button id="example" type="button" class="button ghost">Usar exemplo</button><button id="extract" class="button primary" type="submit">Organizar relato →</button></div></form><p id="gemini-status" class="subtle"></p></article><article class="surface"><span class="eyebrow">REVISÃO DAS INFORMAÇÕES</span><h2>Dados extraídos</h2><div id="extraction-output"><p class="empty">O resultado aparecerá aqui com os trechos de origem.</p></div><button id="confirm-extraction" class="button primary" hidden>Confirmar relato na conversa</button></article></div>
+    </section>
+    <section id="automation" class="panel" hidden>
+      <article class="surface"><span class="eyebrow">IR ALÉM 2 · AUTOMAÇÃO</span><div class="section-title"><h2>Acompanhar execuções</h2><button id="refresh-automation" class="button ghost">Atualizar</button></div><p>Dados simulados analisados com Isolation Forest. Anomalia estatística não é classificação de risco clínico.</p><div id="automation-output" aria-live="polite"></div></article>
+    </section>
+    <p id="feedback" role="status" aria-live="polite"></p>
+    <footer>Feito para aprender. Pensado para conversar.<span>CardioIA · Protótipo educacional</span></footer>
+  </main>
+</body>
+</html>
