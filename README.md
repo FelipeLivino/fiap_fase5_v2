@@ -176,7 +176,7 @@ docker compose ps
 | Healthcheck | [localhost:5000/health](http://localhost:5000/health) | Verificação do processo HTTP |
 | Status | [localhost:5000/api/status](http://localhost:5000/api/status) | Presença de configuração das integrações |
 
-Se a porta estiver ocupada, altere `APP_PORT` no `.env` e use a nova porta nos endereços acima. Após editar variáveis, repita `docker compose --profile automacao up -d`; `restart` sozinho não injeta a configuração alterada.
+Se a porta estiver ocupada, altere `APP_PORT` no `.env` e use a nova porta nos endereços acima. Nas capturas deste README, a aplicação foi executada em **[localhost:5001](http://localhost:5001)**, com `APP_PORT=5001`. Após editar variáveis, repita `docker compose --profile automacao up -d`; `restart` sozinho não injeta a configuração alterada.
 
 Para executar apenas a interface e a extração:
 
@@ -197,13 +197,54 @@ O encerramento preserva os volumes. `down -v` apaga os dados e não faz parte da
 
 ## 6. Configuração e fluxo do Watson
 
-### 6.1 Importação do diálogo
+### 6.1 Como o IBM Watson foi configurado
 
-Crie um assistente, ative **Assistant settings > Dialog** e abra **Dialog > Options > Upload / Download**. Importe [watson/assistant-skill.json](./watson/assistant-skill.json) em um diálogo novo; a importação substitui o conteúdo existente. Não altere um assistente de outro projeto.
+O painel da IBM apresenta o serviço como **watsonx Assistant**. Neste projeto, usamos o recurso **Dialog**, com intenções, entidades e nós de conversa. As capturas abaixo foram feitas no assistente real do projeto em **7 de setembro de 2026**.
 
-Consulte as credenciais da instância IBM para `WA_API_KEY` e `WA_URL`. Na configuração do assistente, use seu ID em `WA_ASSISTANT_ID`; em **Environments > Settings > API details**, copie o ID do ambiente para `WA_ENVIRONMENT_ID`.
+**Instância e idioma.** Na IBM Cloud, abra **Lista de recursos**, localize a instância de **watsonx Assistant** e selecione **Launch watsonx Assistant**. Para reproduzir a configuração, crie um assistente dedicado com o idioma **Brazilian Portuguese**. O assistente usado na entrega se chama **CardioIA Fase 5 v2** e está no plano Lite, na região Sydney (`au-syd`).
 
-O SDK 11.2.0 exige os dois identificadores separados. O cliente também envia um `user_id` opaco por sessão, sem dados pessoais. O código usa a API v2 com sessão e a versão de API indicada no [.env.example](./.env.example).
+![Configuração do assistente CardioIA Fase 5 v2 com idioma Brazilian Portuguese](./docs/evidence/screenshots/ibm-assistente.jpg)
+
+*Tela de Assistant settings: nome, idioma e descrição do assistente utilizado na aplicação.*
+
+**Ativação e importação.** Abra **Assistant settings > Dialog**, ative **Activate dialog** e confirme a ativação, caso o recurso ainda esteja desativado. Depois, entre em **Dialog > Options > Upload / Download**, selecione a aba **Upload** e envie [watson/assistant-skill.json](./watson/assistant-skill.json). Faça isso em um diálogo novo: a importação substitui o conteúdo existente. Esse é o caminho documentado pela IBM para [ativar Dialog e importar uma skill](https://cloud.ibm.com/docs/watson-assistant?topic=watson-assistant-activate-dialog).
+
+![Tela Upload Download do Watson com a aba Upload e seleção de arquivo JSON](./docs/evidence/screenshots/ibm-importacao.jpg)
+
+*Local de importação do JSON do diálogo. A tela foi aberta para documentar o procedimento; nenhuma nova importação foi feita durante a captura.*
+
+**Conferência do conteúdo.** Após importar e aguardar o treinamento, confira **Intents**, **Entities > My Entities** e **Dialog**. A definição entregue contém 22 intenções, 125 exemplos, seis entidades e 69 nós. As intenções reconhecem o objetivo da mensagem; as entidades identificam valores e campos; os nós determinam a resposta e a atualização do contexto.
+
+![Lista de intenções no IBM Watson mostrando o total de 22](./docs/evidence/screenshots/ibm-intencoes.jpg)
+
+*Intenções como `#agradecer`, `#cancelar_etapa` e `#corrigir_informacao` permitem responder a situações que acontecem no meio da coleta.*
+
+![Seis entidades configuradas no IBM Watson Assistant](./docs/evidence/screenshots/ibm-entidades.jpg)
+
+*Entidades para pressão, frequência, sintomas, tipo de medição, campo de correção e confirmação explícita.*
+
+![Árvore do diálogo Watson com nós de boas-vindas, urgência, reinício e ajuda](./docs/evidence/screenshots/ibm-dialogo.jpg)
+
+*Trecho inicial da árvore. Os caminhos de urgência, reinício, encerramento e limites do assistente aparecem antes da coleta de dados.*
+
+**Ambiente da aplicação.** A demonstração local utiliza **Draft**, onde está o conteúdo em edição. Em **Environments**, selecione **Draft** e abra a engrenagem **Settings > API details**. Copie o campo **Environment ID** para `WA_ENVIRONMENT_ID`. O identificador do assistente fica em **Assistant settings > Assistant IDs and API details > View details**.
+
+![Ambiente Draft do assistente IBM com conteúdo em edição e acesso às configurações](./docs/evidence/screenshots/ibm-ambiente-draft.jpg)
+
+*Ambiente de rascunho usado na integração local. Esta captura não comprova publicação no ambiente Live. O frontend do projeto conversa com a API pelo Flask; ele não incorpora o widget Web chat mostrado no painel IBM.*
+
+**Ligação com o Flask.** Na página da instância IBM Cloud, a seção **Credentials** fornece a chave e a URL do serviço. Preencha o `.env` local conforme a correspondência abaixo; cada reprodução deve usar os dados da própria instância.
+
+| Campo no painel IBM | Variável local | Uso no projeto |
+| --- | --- | --- |
+| Credentials > API key | `WA_API_KEY` | Autenticação IAM no backend |
+| Credentials > URL | `WA_URL` | Endereço HTTPS da instância; não usar o endereço do editor no navegador |
+| Assistant IDs and API details > Assistant ID | `WA_ASSISTANT_ID` | Identificação do assistente CardioIA |
+| Draft > Settings > API details > Environment ID | `WA_ENVIRONMENT_ID` | Seleção do rascunho usado na demonstração |
+
+Os dois identificadores são enviados separadamente pelo [cliente Watson](./services/watson_service.py), com SDK 11.2.0 e API v2. O cliente cria uma sessão, reutiliza seu contexto nas mensagens e envia um `user_id` opaco, sem dados pessoais. A versão de API está em `WA_API_VERSION` no [.env.example](./.env.example). Chave, IDs e URL privada da instância não foram incluídos nas imagens.
+
+Depois de preencher o `.env`, execute `docker compose --profile automacao up -d`, abra a aplicação e escolha **Nova conversa**. Envie uma medição fictícia e confira a resposta e o resumo. Essa interação verifica a integração; apenas abrir `/health` não testa a autenticação no Watson.
 
 ### 6.2 Roteiro de interação
 
@@ -217,6 +258,10 @@ Quero registrar minha pressão
 Também estão disponíveis relato, histórico, correção, ajuda e reinício. O mesmo perfil do navegador compartilha a sessão entre abas; perfis distintos são isolados.
 
 O [fluxo conversacional](./docs/fluxo-conversacional.md) documenta os caminhos, estados e critérios da coleta. Você pode dizer “não lembro”, pular uma pergunta, agradecer sem encerrar e corrigir um valor na mesma mensagem. Pressão e frequência com unidades também podem ser informadas juntas. Os atalhos abaixo do chat acompanham a etapa atual.
+
+![Aplicação Flask com conversa Watson e resumo de pressão e frequência](./docs/evidence/screenshots/aplicacao-watson.jpg)
+
+*Captura real do frontend HTML, CSS e JavaScript: a mensagem fictícia informa 120/80 mmHg e 72 bpm juntos. O Watson pede conferência, e o resumo mostra os dois valores aguardando confirmação.*
 
 ### 6.3 Fonte e exportação
 
@@ -233,6 +278,10 @@ Copie os arquivos gerados em `/app/runtime` usando `docker compose cp`.
 ## 7. Ir Além 1: extração estruturada com Gemini
 
 Na aba **Organizar relato**, use o exemplo fictício, solicite a extração e revise valores, estados e evidências. Com uma conversa ativa, inclua o relato no contexto do Watson. A confirmação não valida clinicamente o conteúdo.
+
+![Tela Organizar relato com pressão, ausência de dor e frequência extraídas](./docs/evidence/screenshots/aplicacao-gemini.jpg)
+
+*Resultado exibido pela integração Gemini: pressão e frequência afirmadas, dor negada e os trechos de origem. Nesta captura, a aplicação reutilizou um resultado do cache, como informa o aviso na tela; não houve nova chamada ao modelo.*
 
 Também é possível executar a extração pela linha de comando:
 
@@ -262,6 +311,10 @@ O modelo usa quatro atributos: pressão sistólica, pressão diastólica, frequ�
 O robô salva avaliação, alerta, identificador de execução e versão do modelo no SQLite. Uma fila persistente `outbox` replica eventos no MongoDB por `upsert`, permitindo repetir a sincronização após falhas sem duplicar alertas. As mensagens textuais do MongoDB são interpretadas pelo mesmo serviço Gemini, preservando pendências quando falta chave ou cota.
 
 As estruturas estão documentadas no [schema relacional](./database/relational/schema.sql) e no [README do banco documental](./database/nonrelational/README.md).
+
+![Monitoramento da aplicação com 63 medições, 11 anomalias e nenhum evento pendente](./docs/evidence/screenshots/aplicacao-automacao.jpg)
+
+*Painel do robô Python e da persistência SQLite/MongoDB, capturado em 7 de setembro de 2026. Os totais acumulados são 63 medições, 11 anomalias estatísticas e zero eventos pendentes de sincronização. As últimas execuções processaram zero novos registros porque o conjunto inicial já havia sido avaliado. Esta é a tela da aplicação, não um console dos bancos.*
 
 ### 8.2 Executar um ciclo isolado
 
