@@ -387,39 +387,108 @@ Permanecem pendentes na documentação: revisão em tela estreita, execução in
 
 ## 11. Estrutura do repositório
 
+A árvore abaixo lista todas as pastas e todos os arquivos versionados do projeto, com a finalidade de cada item.
+
 ```text
-cap1-fase5-v2/
-├── asset/
-│   └── logo-fiap.png              # identidade institucional
-├── automation/                   # robô, dados sintéticos e modelo
-│   └── tests/                    # testes do pipeline de automação
-├── database/
-│   ├── relational/               # schema SQLite
-│   └── nonrelational/            # documentação MongoDB
-├── docs/
-│   ├── evidence/                 # resultados das verificações
-│   ├── fluxo-conversacional.md
-│   ├── roteiro-video.md
-│   └── VALIDACAO.md
-├── extensions/
-│   └── generative/               # prompt, extração e avaliação Gemini
-├── output/
-│   ├── pdf/                      # três relatórios da entrega
-│   └── video/                    # demonstração e metadados
-├── services/                     # sessões, integrações e validação
-├── static/                       # CSS e JavaScript
-├── templates/                    # interface HTML servida pelo Flask
-├── tests/                        # testes do núcleo e integração
-├── watson/                       # definição, exportação e avaliação
-├── .env.example
-├── app.py
-├── compose.yaml
-├── config.py
-├── Dockerfile
-├── PLANO_IMPLEMENTACAO.md
-├── requirements.txt
-└── README.md
+cap1-fase5-v2/                                    # Raiz do projeto CardioIA.
+├── asset/                                       # Recursos visuais institucionais.
+│   └── logo-fiap.png                             # Logotipo da FIAP exibido no README.
+├── automation/                                  # Automação de medições, análise e sincronização entre bancos.
+│   ├── tests/                                   # Testes automatizados do pipeline do robô.
+│   │   ├── __init__.py                           # Define o pacote Python de testes da automação.
+│   │   └── test_pipeline.py                      # Verifica carga inicial, análise, reenvio e ausência de duplicações.
+│   ├── __init__.py                               # Define o pacote Python da automação.
+│   ├── add_measurement.py                        # Insere uma medição fictícia para processamento no próximo ciclo.
+│   ├── analysis.py                               # Valida atributos, treina Isolation Forest e calcula a versão do modelo.
+│   ├── data.py                                   # Inicializa o SQLite e define medições e mensagens sintéticas.
+│   ├── Dockerfile                                # Constrói a imagem Docker que executa o robô Python.
+│   ├── inspect_data.py                           # Consulta SQLite e MongoDB e exporta evidências dos registros e vínculos.
+│   ├── requirements.txt                          # Lista as dependências Python do robô e da análise de anomalias.
+│   └── robot.py                                  # Executa ciclos de análise, extração textual e sincronização via outbox.
+├── database/                                    # Estrutura e documentação dos bancos de dados.
+│   ├── nonrelational/                            # Documentação do banco documental MongoDB.
+│   │   └── README.md                             # Descreve coleções, identificadores e sincronização dos documentos.
+│   └── relational/                               # Definição do banco relacional SQLite da automação.
+│       └── schema.sql                            # Cria tabelas e índices de pacientes, medições, avaliações, alertas e outbox.
+├── docs/                                        # Documentação do fluxo e evidências do projeto.
+│   ├── evidence/                                 # Resultados registrados de avaliações e capturas da interface.
+│   │   ├── screenshots/                          # Capturas da aplicação e da configuração no painel IBM.
+│   │   │   ├── aplicacao-automacao.jpg            # Mostra o painel de medições, anomalias e sincronização do robô.
+│   │   │   ├── aplicacao-gemini.jpg               # Mostra a organização de um relato com fatos e evidências extraídos.
+│   │   │   ├── aplicacao-watson.jpg               # Mostra a conversa Watson e o resumo de medições para conferência.
+│   │   │   ├── ibm-ambiente-draft.jpg             # Mostra o ambiente Draft usado na integração local.
+│   │   │   ├── ibm-assistente.jpg                 # Mostra nome, idioma e configurações do assistente CardioIA.
+│   │   │   ├── ibm-dialogo.jpg                    # Mostra a árvore de nós do diálogo no Watson.
+│   │   │   ├── ibm-entidades.jpg                  # Mostra as entidades configuradas para reconhecer dados da conversa.
+│   │   │   ├── ibm-importacao.jpg                 # Mostra a tela de importação do JSON do diálogo.
+│   │   │   └── ibm-intencoes.jpg                  # Mostra as intenções cadastradas no Watson.
+│   │   ├── automation-run.json                   # Registra contagens, casos controlados, execuções e dados sincronizados.
+│   │   ├── conversation-evaluation.json          # Registra os resultados dos cenários de diálogo com o Watson real.
+│   │   ├── gemini-evaluation.json                # Registra casos de extração, correspondências e revisão manual dos fatos.
+│   │   ├── interface.jpg                         # Preserva uma captura da interface como evidência visual do protótipo.
+│   │   ├── live-workflow.json                    # Registra etapas e resultados do fluxo integrado com APIs reais via HTTP.
+│   │   └── watson-evaluation.json                # Registra a classificação de frases inéditas e os acertos do Watson.
+│   └── fluxo-conversacional.md                   # Documenta caminhos, estados, correções e limites da conversa.
+├── extensions/                                  # Extensões funcionais do projeto.
+│   ├── generative/                              # Ferramentas e instruções da extração generativa com Gemini.
+│   │   ├── __init__.py                           # Define o pacote Python da extensão generativa.
+│   │   ├── evaluate.py                           # Avalia a extração real com relatos fictícios e referências esperadas.
+│   │   ├── extract_clinical.py                    # Permite extrair fatos de um relato pela linha de comando.
+│   │   └── prompt.txt                            # Define as instruções de extração e preservação de evidências e estados.
+│   └── __init__.py                               # Define o pacote Python de extensões.
+├── output/                                      # Artefatos finais da entrega acadêmica.
+│   ├── pdf/                                     # Relatórios em PDF para leitura e entrega.
+│   │   ├── fluxo-conversacional.pdf              # Relatório do assistente e do fluxo conversacional.
+│   │   ├── ir-alem-1-extracao.pdf                 # Relatório da extração estruturada com Gemini.
+│   │   └── ir-alem-2-automacao.pdf                # Relatório da automação, dos bancos e da detecção de anomalias.
+│   ├── video/                                   # Vídeo demonstrativo e informações sobre sua produção.
+│   │   ├── cardioia-demonstracao.mp4             # Apresenta a aplicação, a extração e a automação com narração.
+│   │   └── demonstracao.json                     # Registra duração, formato, origem das capturas e trechos da narração.
+│   └── word/                                    # Versões editáveis dos relatórios entregues em PDF.
+│       ├── fluxo-conversacional.docx             # Documento Word do relatório do fluxo conversacional.
+│       ├── ir-alem-1-extracao.docx                # Documento Word do relatório de extração com Gemini.
+│       └── ir-alem-2-automacao.docx               # Documento Word do relatório de automação e anomalias.
+├── services/                                    # Serviços compartilhados pelo backend e pela automação.
+│   ├── __init__.py                               # Define o pacote Python de serviços.
+│   ├── clinical_summary.py                       # Converte o contexto Watson em resumo de relatos, medições e confirmação.
+│   ├── conversation_ui.py                        # Seleciona sugestões de mensagens conforme a etapa da conversa.
+│   ├── errors.py                                 # Define erros de serviço com código, mensagem e status HTTP.
+│   ├── gemini_service.py                         # Integra o Gemini, valida fatos e evidências e aplica cache e limites de uso.
+│   ├── storage.py                                # Persiste conversas, extrações pendentes, cache e contagem de chamadas no SQLite.
+│   └── watson_service.py                         # Gerencia o cliente Watson, as sessões, as mensagens e os erros da integração.
+├── static/                                      # Arquivos estáticos utilizados pelo navegador.
+│   ├── css/                                     # Folhas de estilo da interface.
+│   │   └── styles.css                            # Define cores, tipografia, componentes e layout responsivo.
+│   └── js/                                      # Scripts de interação da interface.
+│       └── chat.js                               # Controla conversa, extração, resumo e consulta da automação pelas APIs Flask.
+├── templates/                                   # Templates HTML renderizados pelo Flask.
+│   └── index.html                               # Estrutura a página de conversa, organização de relatos e monitoramento.
+├── tests/                                       # Testes do backend e scripts de validação com serviços reais.
+│   ├── live_conversation.py                      # Verifica estados, correções e desvios de fluxo no diálogo Watson real.
+│   ├── live_workflow.py                          # Valida via HTTP contexto, correção, isolamento, extração e reinício.
+│   ├── test_chat_api.py                          # Testa rotas, sessões, proteção CSRF, entradas e erros com serviços simulados.
+│   ├── test_extraction.py                        # Testa validação de fatos, evidências, negação, cache e limites de chamadas.
+│   └── test_watson_service.py                    # Testa configuração, preservação de sessão e tratamento de erros do Watson.
+├── watson/                                      # Definição, atualização, exportação e avaliação do assistente.
+│   ├── assistant-skill.json                      # Contém a definição importável do diálogo, com intenções, entidades e nós.
+│   ├── build_skill.py                            # Gera a definição do diálogo a partir de sua fonte editável em Python.
+│   ├── evaluate.py                               # Avalia a classificação de 42 frases inéditas pela API real do Watson.
+│   ├── export-provenance.json                    # Registra a origem, a data, as contagens e o hash da exportação oficial.
+│   ├── export_skill.py                           # Exporta o diálogo pela API IBM e gera o JSON e seu registro de procedência.
+│   └── update_dialog.py                          # Atualiza o diálogo no Draft após conferir o projeto e salvar uma cópia anterior.
+├── .dockerignore                                # Exclui segredos, dados locais e materiais desnecessários do contexto Docker.
+├── .env.example                                 # Fornece o modelo de variáveis de ambiente para configurar a execução local.
+├── .gitignore                                   # Define arquivos locais, segredos e artefatos gerados que o Git deve ignorar.
+├── app.py                                       # Cria a aplicação Flask e suas rotas de conversa, extração, status e monitoramento.
+├── compose.yaml                                 # Orquestra aplicação, MongoDB e robô, com volumes, redes e verificações de saúde.
+├── config.py                                    # Carrega variáveis de ambiente e valores padrão usados pelos serviços.
+├── Dockerfile                                   # Constrói a imagem da aplicação Flask e configura sua execução com Gunicorn.
+├── PLANO_IMPLEMENTACAO.md                        # Registra escopo, fases, critérios de aceitação e andamento do projeto.
+├── README.md                                    # Apresenta o projeto, a configuração, o uso, os testes e os materiais da entrega.
+└── requirements.txt                             # Lista as dependências Python da aplicação e das integrações.
 ```
+
+Arquivos locais como `.env`, `enunciado.md` e os PDFs das aulas, além de diretórios temporários como `tmp/`, são ignorados pelo Git e não integram a árvore versionada. A pasta `.git/` contém os metadados internos de controle de versão.
 
 ## 12. Documentos da entrega
 
