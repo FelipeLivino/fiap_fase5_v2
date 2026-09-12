@@ -32,6 +32,7 @@ class Store:
         db = sqlite3.connect(self.path, timeout=15)
         try:
             db.row_factory = sqlite3.Row
+            # O bloco confirma a transação ao terminar ou desfaz as alterações se houver erro.
             with db:
                 yield db
         finally:
@@ -63,6 +64,7 @@ class Store:
     def reserve_call(self, limit, interval):
         now = time.time()
         with self.connection() as db:
+            # Reservar a escrita antes da contagem impede que processos simultâneos ultrapassem a cota.
             db.execute('BEGIN IMMEDIATE')
             db.execute('DELETE FROM calls WHERE at<=?', (now-86400,))
             count, last = db.execute('SELECT count(*), max(at) FROM calls').fetchone()

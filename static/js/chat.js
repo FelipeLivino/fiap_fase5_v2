@@ -28,6 +28,7 @@ function message(text, who='bot') {
   $('messages').querySelector('.intro')?.remove();
   const block = document.createElement('div'); block.className = `message ${who}`;
   const label = document.createElement('strong'); label.textContent = who === 'user' ? 'Você' : 'CardioIA';
+  // Inserir como texto impede que relatos ou respostas sejam interpretados como HTML.
   const content = document.createElement('span'); content.textContent = text;
   block.append(label, content); $('messages').append(block); $('messages').scrollTop = $('messages').scrollHeight;
 }
@@ -48,6 +49,7 @@ async function status() {
   return s;
 }
 function setBusy(value) {
+  // Bloquear os botões durante o envio evita requisições duplicadas por cliques repetidos.
   busy=value;
   for(const el of document.querySelectorAll('#send,#reset,.suggestions button,#extract,#confirm-extraction'))el.disabled=value;
 }
@@ -87,8 +89,12 @@ $('extract-form').addEventListener('submit',async(e)=>{
     for(const f of d.fatos){const card=document.createElement('div');card.className='fact';const title=document.createElement('strong'),meta=document.createElement('small'),quote=document.createElement('blockquote');title.textContent=f.valor;meta.textContent=`${f.campo.replaceAll('_',' ')} · ${f.estado}`;quote.textContent=f.evidencia;card.append(title,meta,quote);$('extraction-output').append(card);}
     if(!d.fatos.length){const p=document.createElement('p');p.textContent='Nenhuma informação dos campos previstos foi encontrada.';$('extraction-output').append(p);}
     const details=document.createElement('details'),caption=document.createElement('summary'),pre=document.createElement('pre');caption.textContent='Ver JSON estruturado';pre.textContent=JSON.stringify(d,null,2);details.append(caption,pre);$('extraction-output').append(details);
-    $('confirm-extraction').hidden=!ready||!d.fatos.length;feedback(d.cache?'Resultado reutilizado, sem nova chamada à API.':'Extração pronta para revisão. Nenhum dado foi confirmado automaticamente.');await status();
-  }catch(error){feedback(error.message);}finally{setBusy(false);}
+    $('confirm-extraction').hidden=!ready||!d.fatos.length;feedback(d.cache?'Resultado reutilizado, sem nova chamada à API.':'Extração pronta para revisão. Nenhum dado foi confirmado automaticamente.');
+  }catch(error){feedback(error.message);}finally{
+    // Tentativas que falham também consomem o orçamento local.
+    try{await status();}catch{ /* Preservar o resultado ou erro da extração. */ }
+    setBusy(false);
+  }
 });
 $('confirm-extraction').addEventListener('click',async()=>{setBusy(true);try{const d=await api('/api/extract/confirm',{});renderSummary(d.summary);renderSuggestions(d.suggestions);message(d.response);$('confirm-extraction').hidden=true;feedback('Relato incluído na conversa para conferência.');}catch(e){feedback(e.message);}finally{setBusy(false);}});
 async function loadAutomation(){try{

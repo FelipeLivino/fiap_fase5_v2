@@ -29,6 +29,7 @@ def create_app(overrides=None, watson=None, gemini=None):
     @app.before_request
     def check_csrf():
         if request.method == 'POST':
+            # O token vincula o envio à sessão que abriu a página e ajuda a bloquear requisições de outros sites.
             expected = session.get('csrf')
             actual = request.headers.get('X-CSRF-Token', '')
             if not expected or not secrets.compare_digest(expected, actual):
@@ -95,6 +96,7 @@ def create_app(overrides=None, watson=None, gemini=None):
             except ServiceError:
                 pass
             raise
+        # Relatos e resumos ficam no banco local; a sessão recebe o identificador da conversa.
         store.create(token, wa_id)
         session['conversation'] = token
         if old:
@@ -171,6 +173,7 @@ def create_app(overrides=None, watson=None, gemini=None):
             result = gemini.extract(text)
             token = session.get('conversation')
             if token and store.get(token):
+                # Guardar como pendente permite revisar a extração antes de incluí-la no Watson.
                 store.update(token, 'pending', result)
             return jsonify(result)
 

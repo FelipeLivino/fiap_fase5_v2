@@ -46,6 +46,7 @@ class WatsonService:
         return self.invoke('delete_session', session_id=session_id)
 
     def message(self, session_id, text='', context=None):
+        # Solicitar o contexto atualizado permite montar o resumo e os atalhos da próxima etapa.
         kwargs = {'session_id': session_id, 'user_id': session_id,
                   'input': {'message_type': 'text', 'text': text, 'options': {'return_context': True}}}
         if context is not None:

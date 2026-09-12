@@ -31,6 +31,7 @@ def event(db, identifier, collection, body):
 
 def flush(db, mongo):
     for row in db.execute('SELECT * FROM outbox WHERE delivered=0 ORDER BY rowid').fetchall():
+        # Reutilizar o identificador permite reenviar um evento sem duplicá-lo no MongoDB.
         mongo[row['collection']].replace_one({'_id':row['id']},json.loads(row['body']),upsert=True)
         with db:
             db.execute('UPDATE outbox SET delivered=1 WHERE id=?',(row['id'],))
@@ -38,6 +39,7 @@ def flush(db, mongo):
 
 def analyze(db, run_id):
     model,version=train(db.execute("SELECT * FROM measurements WHERE dataset='treino' ORDER BY id").fetchall())
+    # Cada medição é avaliada uma vez por versão; mudanças no treinamento permitem nova avaliação.
     rows=db.execute("""SELECT m.* FROM measurements m WHERE dataset='monitoramento'
         AND NOT EXISTS (SELECT 1 FROM evaluations e WHERE e.measurement_id=m.id AND e.model_version=?)
         ORDER BY m.id""",(version,)).fetchall()
@@ -123,6 +125,7 @@ def main():
     config['DATA_DIR'].mkdir(parents=True,exist_ok=True)
     with (config['DATA_DIR']/'robot.lock').open('a') as lock:
         try:
+            # O bloqueio do arquivo impede dois robôs de processarem o mesmo volume ao mesmo tempo.
             fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
         except BlockingIOError:
             parser.exit(1,'Já há uma execução do robô ativa neste volume.\n')

@@ -195,6 +195,8 @@ docker compose --profile automacao down
 
 O encerramento preserva os volumes. `down -v` apaga os dados e não faz parte da execução normal.
 
+Se a extração falhar, a interface distingue demora na resposta (`GEMINI_TIMEOUT`), falha de conexão (`GEMINI_CONNECTION`), acesso recusado (`GEMINI_AUTH`), requisição recusada (`GEMINI_REQUEST`), modelo indisponível e limite de chamadas. Em caso de timeout, aguarde alguns segundos e clique novamente em **Organizar relato**. Não há repetição automática: cada tentativa é contabilizada no orçamento local, inclusive quando falha, e o contador é atualizado ao fim da operação. Os logs registram somente o tipo da exceção e o código HTTP, sem expor a chave ou o relato.
+
 ## 6. Configuração e fluxo do Watson
 
 ### 6.1 Como o IBM Watson foi configurado

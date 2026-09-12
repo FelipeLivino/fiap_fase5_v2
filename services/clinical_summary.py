@@ -7,12 +7,14 @@ def summarize(context):
     summary['sintomas_relatados'] = []  # Uma entidade lexical não comprova sintoma presente.
     summary['pressao_arterial'] = None
     pressure = str(data.get('pressao_informada') or '')
+    # Aceitar somente o formato completo evita converter uma entrada ambígua como "12/8".
     match = re.fullmatch(r'\s*(\d{2,3})\s*/\s*(\d{2,3})\s*(?:mmhg)?\s*', pressure, re.I)
     if match:
         summary['pressao_arterial'] = dict(sistolica=int(match[1]), diastolica=int(match[2]),
                                          unidade='mmHg', texto_original=pressure)
     summary['frequencia_cardiaca'] = None
     heart = str(data.get('frequencia_informada') or '')
+    # Exigir a unidade "bpm" evita tratar qualquer número isolado como frequência cardíaca.
     match = re.fullmatch(r'\s*(\d{2,3})\s*bpm\s*', heart, re.I)
     if match:
         summary['frequencia_cardiaca'] = {'valor': int(match[1]), 'unidade': 'bpm', 'texto_original': heart}
