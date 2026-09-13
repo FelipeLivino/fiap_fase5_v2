@@ -490,15 +490,7 @@ Os três PDFs da entrega estão reunidos diretamente na pasta [relatorios/](./re
 
 A publicação no GitHub será realizada pelo responsável pelo projeto. As contribuições individuais devem ser registradas antes do envio à faculdade.
 
-## 13. Vídeo de apresentação
-
-O vídeo de apresentação do CardioIA foi publicado no YouTube.
-
-▶️ **Link do vídeo no YouTube: a adicionar.**
-
-<!-- Adicionar aqui o link do vídeo publicado no YouTube. -->
-
-## 14. Licença
+## 13. Licença
 
 Uso acadêmico no projeto FIAP — Fase 5. A atribuição abaixo refere-se ao modelo institucional de README fornecido como referência.
 
