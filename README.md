@@ -69,37 +69,37 @@ O projeto inclui os dois desafios **Ir Além**:
 
 Todos os dados de demonstração são fictícios. A aplicação não faz diagnóstico nem recomenda tratamentos. A confirmação do resumo representa uma conferência do conteúdo pelo usuário, sem validação clínica.
 
-O planejamento completo e seu andamento estão em [PLANO_IMPLEMENTACAO.md](./PLANO_IMPLEMENTACAO.md).
+Os relatórios da entrega estão na pasta [relatorios/](./relatorios/), com os documentos do fluxo conversacional e dos dois desafios Ir Além.
 
 ## 2. O que foi entregue
 
-| Área | Entrega |
-| --- | --- |
+| Área                      | Entrega                                                                                                                             |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | Assistente conversacional | Watson Dialog com 22 intenções, 125 exemplos, seis entidades e 69 nós; correções diretas, recusa, reformulação e mudança de assunto |
-| Interface | Aplicação Flask com HTML, CSS e JavaScript, conversa e resumo para conferência |
-| Gestão de contexto | Sessão reutilizada durante a conversa, correção de campos e reinício |
-| Extração generativa | Fatos estruturados com valor, evidência literal e estado |
-| Automação | Robô periódico para processamento de medições e mensagens sintéticas |
-| Detecção de anomalias | Isolation Forest treinado e avaliado em conjuntos sintéticos separados |
-| Persistência | SQLite para avaliações, alertas e execuções; MongoDB para documentos e eventos sincronizados |
-| Recuperação de falhas | Fila persistente `outbox` e sincronização por `upsert` |
-| Execução | Docker Compose com aplicação, robô e MongoDB |
-| Evidências | Testes automatizados, avaliações com APIs reais, três relatórios PDF e vídeo demonstrativo |
+| Interface                 | Aplicação Flask com HTML, CSS e JavaScript, conversa e resumo para conferência                                                      |
+| Gestão de contexto        | Sessão reutilizada durante a conversa, correção de campos e reinício                                                                |
+| Extração generativa       | Fatos estruturados com valor, evidência literal e estado                                                                            |
+| Automação                 | Robô periódico para processamento de medições e mensagens sintéticas                                                                |
+| Detecção de anomalias     | Isolation Forest treinado e avaliado em conjuntos sintéticos separados                                                              |
+| Persistência              | SQLite para avaliações, alertas e execuções; MongoDB para documentos e eventos sincronizados                                        |
+| Recuperação de falhas     | Fila persistente `outbox` e sincronização por `upsert`                                                                              |
+| Execução                  | Docker Compose com aplicação, robô e MongoDB                                                                                        |
+| Evidências                | Testes automatizados da automação, avaliações com APIs reais, três relatórios PDF e vídeo demonstrativo no YouTube                  |
 
 ## 3. Stack
 
-| Camada | Tecnologia |
-| --- | --- |
-| Interface | HTML, CSS e JavaScript, sem dependências externas de frontend |
-| Backend | Python 3.12.12 + Flask 3.1.3 |
-| Servidor HTTP | Gunicorn 26.2.0 |
-| Assistente | IBM Watson Assistant Dialog, API v2 e SDK `ibm-watson` 11.2.0 |
-| Extração generativa | Gemini, com modelo padrão `gemini-3.5-flash-lite` e SDK `google-genai` 2.22.0 |
-| Banco relacional | SQLite, embutido no Python |
-| Banco documental | MongoDB 8.0 + PyMongo 4.18.0 |
-| Detecção de anomalias | Isolation Forest, com scikit-learn 1.9.0 |
-| Testes | `unittest` e scripts de avaliação |
-| Orquestração | Docker Compose |
+| Camada                | Tecnologia                                                                    |
+| --------------------- | ----------------------------------------------------------------------------- |
+| Interface             | HTML, CSS e JavaScript, sem dependências externas de frontend                 |
+| Backend               | Python 3.12.12 + Flask 3.1.3                                                  |
+| Servidor HTTP         | Gunicorn 26.2.0                                                               |
+| Assistente            | IBM Watson Assistant Dialog, API v2 e SDK `ibm-watson` 11.2.0                 |
+| Extração generativa   | Gemini, com modelo padrão `gemini-3.5-flash-lite` e SDK `google-genai` 2.22.0 |
+| Banco relacional      | SQLite, embutido no Python                                                    |
+| Banco documental      | MongoDB 8.0 + PyMongo 4.18.0                                                  |
+| Detecção de anomalias | Isolation Forest, com scikit-learn 1.9.0                                      |
+| Testes                | `unittest` e scripts de avaliação                                             |
+| Orquestração          | Docker Compose                                                                |
 
 As dependências estão em [requirements.txt](./requirements.txt) e [automation/requirements.txt](./automation/requirements.txt).
 
@@ -149,17 +149,17 @@ if (-not (Test-Path .env)) { Copy-Item .env.example .env }
 
 Preencha as variáveis locais:
 
-| Variável | Finalidade |
-| --- | --- |
-| `FLASK_SECRET_KEY` | Segredo próprio e aleatório da aplicação |
-| `MONGO_PASSWORD` | Senha própria e aleatória do MongoDB |
-| `WA_API_KEY` | Credencial da instância Watson |
-| `WA_URL` | URL do serviço Watson |
-| `WA_ASSISTANT_ID` | Identificador do assistente |
-| `WA_ENVIRONMENT_ID` | Identificador do ambiente do assistente |
-| `GEMINI_API_KEY` | Credencial da API Gemini |
-| `GEMINI_MODEL` | Modelo de extração; padrão `gemini-3.5-flash-lite` |
-| `APP_PORT` | Porta local da aplicação; padrão `5000` |
+| Variável            | Finalidade                                         |
+| ------------------- | -------------------------------------------------- |
+| `FLASK_SECRET_KEY`  | Segredo próprio e aleatório da aplicação           |
+| `MONGO_PASSWORD`    | Senha própria e aleatória do MongoDB               |
+| `WA_API_KEY`        | Credencial da instância Watson                     |
+| `WA_URL`            | URL do serviço Watson                              |
+| `WA_ASSISTANT_ID`   | Identificador do assistente                        |
+| `WA_ENVIRONMENT_ID` | Identificador do ambiente do assistente            |
+| `GEMINI_API_KEY`    | Credencial da API Gemini                           |
+| `GEMINI_MODEL`      | Modelo de extração; padrão `gemini-3.5-flash-lite` |
+| `APP_PORT`          | Porta local da aplicação; padrão `5000`            |
 
 Nunca publique o arquivo `.env`.
 
@@ -170,11 +170,11 @@ docker compose --profile automacao up --build -d
 docker compose ps
 ```
 
-| Acesso | Endereço | Finalidade |
-| --- | --- | --- |
-| Interface | [localhost:5000](http://localhost:5000) | Conversa e organização de relatos |
-| Healthcheck | [localhost:5000/health](http://localhost:5000/health) | Verificação do processo HTTP |
-| Status | [localhost:5000/api/status](http://localhost:5000/api/status) | Presença de configuração das integrações |
+| Acesso      | Endereço                                                      | Finalidade                               |
+| ----------- | ------------------------------------------------------------- | ---------------------------------------- |
+| Interface   | [localhost:5000](http://localhost:5000)                       | Conversa e organização de relatos        |
+| Healthcheck | [localhost:5000/health](http://localhost:5000/health)         | Verificação do processo HTTP             |
+| Status      | [localhost:5000/api/status](http://localhost:5000/api/status) | Presença de configuração das integrações |
 
 Se a porta estiver ocupada, altere `APP_PORT` no `.env` e use a nova porta nos endereços acima. Nas capturas deste README, a aplicação foi executada em **[localhost:5001](http://localhost:5001)**, com `APP_PORT=5001`. Após editar variáveis, repita `docker compose --profile automacao up -d`; `restart` sozinho não injeta a configuração alterada.
 
@@ -207,42 +207,42 @@ O painel da IBM apresenta o serviço como **watsonx Assistant**. Neste projeto, 
 
 ![Configuração do assistente CardioIA Fase 5 v2 com idioma Brazilian Portuguese](./docs/evidence/screenshots/ibm-assistente.jpg)
 
-*Tela de Assistant settings: nome, idioma e descrição do assistente utilizado na aplicação.*
+_Tela de Assistant settings: nome, idioma e descrição do assistente utilizado na aplicação._
 
 **Ativação e importação.** Abra **Assistant settings > Dialog**, ative **Activate dialog** e confirme a ativação, caso o recurso ainda esteja desativado. Depois, entre em **Dialog > Options > Upload / Download**, selecione a aba **Upload** e envie [watson/assistant-skill.json](./watson/assistant-skill.json). Faça isso em um diálogo novo: a importação substitui o conteúdo existente. Esse é o caminho documentado pela IBM para [ativar Dialog e importar uma skill](https://cloud.ibm.com/docs/watson-assistant?topic=watson-assistant-activate-dialog).
 
 ![Tela Upload Download do Watson com a aba Upload e seleção de arquivo JSON](./docs/evidence/screenshots/ibm-importacao.jpg)
 
-*Local de importação do JSON do diálogo. A tela foi aberta para documentar o procedimento; nenhuma nova importação foi feita durante a captura.*
+_Local de importação do JSON do diálogo. A tela foi aberta para documentar o procedimento; nenhuma nova importação foi feita durante a captura._
 
 **Conferência do conteúdo.** Após importar e aguardar o treinamento, confira **Intents**, **Entities > My Entities** e **Dialog**. A definição entregue contém 22 intenções, 125 exemplos, seis entidades e 69 nós. As intenções reconhecem o objetivo da mensagem; as entidades identificam valores e campos; os nós determinam a resposta e a atualização do contexto.
 
 ![Lista de intenções no IBM Watson mostrando o total de 22](./docs/evidence/screenshots/ibm-intencoes.jpg)
 
-*Intenções como `#agradecer`, `#cancelar_etapa` e `#corrigir_informacao` permitem responder a situações que acontecem no meio da coleta.*
+_Intenções como `#agradecer`, `#cancelar_etapa` e `#corrigir_informacao` permitem responder a situações que acontecem no meio da coleta._
 
 ![Seis entidades configuradas no IBM Watson Assistant](./docs/evidence/screenshots/ibm-entidades.jpg)
 
-*Entidades para pressão, frequência, sintomas, tipo de medição, campo de correção e confirmação explícita.*
+_Entidades para pressão, frequência, sintomas, tipo de medição, campo de correção e confirmação explícita._
 
 ![Árvore do diálogo Watson com nós de boas-vindas, urgência, reinício e ajuda](./docs/evidence/screenshots/ibm-dialogo.jpg)
 
-*Trecho inicial da árvore. Os caminhos de urgência, reinício, encerramento e limites do assistente aparecem antes da coleta de dados.*
+_Trecho inicial da árvore. Os caminhos de urgência, reinício, encerramento e limites do assistente aparecem antes da coleta de dados._
 
 **Ambiente da aplicação.** A demonstração local utiliza **Draft**, onde está o conteúdo em edição. Em **Environments**, selecione **Draft** e abra a engrenagem **Settings > API details**. Copie o campo **Environment ID** para `WA_ENVIRONMENT_ID`. O identificador do assistente fica em **Assistant settings > Assistant IDs and API details > View details**.
 
 ![Ambiente Draft do assistente IBM com conteúdo em edição e acesso às configurações](./docs/evidence/screenshots/ibm-ambiente-draft.jpg)
 
-*Ambiente de rascunho usado na integração local. Esta captura não comprova publicação no ambiente Live. O frontend do projeto conversa com a API pelo Flask; ele não incorpora o widget Web chat mostrado no painel IBM.*
+_Ambiente de rascunho usado na integração local. Esta captura não comprova publicação no ambiente Live. O frontend do projeto conversa com a API pelo Flask; ele não incorpora o widget Web chat mostrado no painel IBM._
 
 **Ligação com o Flask.** Na página da instância IBM Cloud, a seção **Credentials** fornece a chave e a URL do serviço. Preencha o `.env` local conforme a correspondência abaixo; cada reprodução deve usar os dados da própria instância.
 
-| Campo no painel IBM | Variável local | Uso no projeto |
-| --- | --- | --- |
-| Credentials > API key | `WA_API_KEY` | Autenticação IAM no backend |
-| Credentials > URL | `WA_URL` | Endereço HTTPS da instância; não usar o endereço do editor no navegador |
-| Assistant IDs and API details > Assistant ID | `WA_ASSISTANT_ID` | Identificação do assistente CardioIA |
-| Draft > Settings > API details > Environment ID | `WA_ENVIRONMENT_ID` | Seleção do rascunho usado na demonstração |
+| Campo no painel IBM                             | Variável local      | Uso no projeto                                                          |
+| ----------------------------------------------- | ------------------- | ----------------------------------------------------------------------- |
+| Credentials > API key                           | `WA_API_KEY`        | Autenticação IAM no backend                                             |
+| Credentials > URL                               | `WA_URL`            | Endereço HTTPS da instância; não usar o endereço do editor no navegador |
+| Assistant IDs and API details > Assistant ID    | `WA_ASSISTANT_ID`   | Identificação do assistente CardioIA                                    |
+| Draft > Settings > API details > Environment ID | `WA_ENVIRONMENT_ID` | Seleção do rascunho usado na demonstração                               |
 
 Os dois identificadores são enviados separadamente pelo [cliente Watson](./services/watson_service.py), com SDK 11.2.0 e API v2. O cliente cria uma sessão, reutiliza seu contexto nas mensagens e envia um `user_id` opaco, sem dados pessoais. A versão de API está em `WA_API_VERSION` no [.env.example](./.env.example). Chave, IDs e URL privada da instância não foram incluídos nas imagens.
 
@@ -263,7 +263,7 @@ O [fluxo conversacional](./docs/fluxo-conversacional.md) documenta os caminhos, 
 
 ![Aplicação Flask com conversa Watson e resumo de pressão e frequência](./docs/evidence/screenshots/aplicacao-watson.jpg)
 
-*Captura real do frontend HTML, CSS e JavaScript: a mensagem fictícia informa 120/80 mmHg e 72 bpm juntos. O Watson pede conferência, e o resumo mostra os dois valores aguardando confirmação.*
+_Captura real do frontend HTML, CSS e JavaScript: a mensagem fictícia informa 120/80 mmHg e 72 bpm juntos. O Watson pede conferência, e o resumo mostra os dois valores aguardando confirmação._
 
 ### 6.3 Fonte e exportação
 
@@ -283,7 +283,7 @@ Na aba **Organizar relato**, use o exemplo fictício, solicite a extração e re
 
 ![Tela Organizar relato com pressão, ausência de dor e frequência extraídas](./docs/evidence/screenshots/aplicacao-gemini.jpg)
 
-*Resultado exibido pela integração Gemini: pressão e frequência afirmadas, dor negada e os trechos de origem. Nesta captura, a aplicação reutilizou um resultado do cache, como informa o aviso na tela; não houve nova chamada ao modelo.*
+_Resultado exibido pela integração Gemini: pressão e frequência afirmadas, dor negada e os trechos de origem. Nesta captura, a aplicação reutilizou um resultado do cache, como informa o aviso na tela; não houve nova chamada ao modelo._
 
 Também é possível executar a extração pela linha de comando:
 
@@ -316,7 +316,7 @@ As estruturas estão documentadas no [schema relacional](./database/relational/s
 
 ![Monitoramento da aplicação com 63 medições, 11 anomalias e nenhum evento pendente](./docs/evidence/screenshots/aplicacao-automacao.jpg)
 
-*Painel do robô Python e da persistência SQLite/MongoDB, capturado em 7 de setembro de 2026. Os totais acumulados são 63 medições, 11 anomalias estatísticas e zero eventos pendentes de sincronização. As últimas execuções processaram zero novos registros porque o conjunto inicial já havia sido avaliado. Esta é a tela da aplicação, não um console dos bancos.*
+_Painel do robô Python e da persistência SQLite/MongoDB, capturado em 7 de setembro de 2026. Os totais acumulados são 63 medições, 11 anomalias estatísticas e zero eventos pendentes de sincronização. As últimas execuções processaram zero novos registros porque o conjunto inicial já havia sido avaliado. Esta é a tela da aplicação, não um console dos bancos._
 
 ### 8.2 Executar um ciclo isolado
 
@@ -344,36 +344,33 @@ docker compose exec robot python -m automation.inspect_data
 ### 9.1 Testes automatizados
 
 ```sh
-docker compose run --rm --no-deps app python -m unittest discover -s tests -v
 docker compose --profile automacao run --rm --no-deps robot python -m unittest discover -s automation/tests -v
 ```
 
-Os testes usam substitutos controlados das APIs externas; eles não medem a qualidade do Watson/Gemini.
+Os cinco testes disponíveis em [automation/tests/](./automation/tests/) verificam a carga inicial, a análise de medições, a prevenção de duplicações e o reenvio de eventos. O MongoDB é substituído por um objeto controlado durante os testes; essa suíte não mede a qualidade do Watson/Gemini.
 
 ### 9.2 Validação com APIs reais
 
 ```sh
-docker compose exec app python tests/live_workflow.py
 docker compose run --rm --no-deps app python -m watson.evaluate
+docker compose run --rm --no-deps app python -m extensions.generative.evaluate
 ```
 
-O primeiro script verifica contexto, correção, isolamento, extração e reinício. O segundo avalia 42 frases inéditas e faz chamadas reais ao Watson. A reprodução requer credenciais válidas e está sujeita às cotas dos serviços.
+O primeiro script avalia 42 frases inéditas com o Watson. O segundo avalia seis relatos fictícios com o Gemini, verificando formato, evidências e correspondência com as referências esperadas. A reprodução requer credenciais válidas e está sujeita às cotas dos serviços.
 
 ### 9.3 Resultados documentados
 
-Os resultados abaixo correspondem à verificação registrada em **4 de setembro de 2026**, conforme [docs/VALIDACAO.md](./docs/VALIDACAO.md).
+Os resultados abaixo são registros históricos preservados nos [artefatos de evidência](./docs/evidence/). Eles correspondem às versões e execuções documentadas nesses arquivos.
 
-| Verificação | Resultado registrado | Limite |
-| --- | --- | --- |
-| Testes de código | 26 testes do núcleo/extração e cinco do robô aprovados | APIs externas substituídas por respostas controladas |
-| Integração Watson/Gemini | Fluxo real aprovado pela API HTTP | Cenários fictícios |
-| Classificação Watson | 38 de 42 frases conforme a referência: 90,5% | Quatro diferenças documentadas; amostra acadêmica pequena |
-| Extração Gemini | Seis de seis saídas passaram esquema/evidências; todos os seis fatos da referência inicial foram encontrados | Um fato adicional apoiado no texto exigiu revisão da referência |
-| Automação | 240 medições de treino, 63 avaliadas, 11 alertas e zero eventos pendentes | Distribuição artificial, sem conclusão clínica |
-| Persistência e sincronização | Recuperação após indisponibilidade do MongoDB, sem duplicar os 11 alertas | Falha testada em ambiente local controlado |
-| Relatórios | Três PDFs de duas páginas, renderizados e revisados | Evidência da entrega documentada |
+| Verificação                                                    | Resultado registrado                                                                                         | Limite                                                          |
+| -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------- |
+| [Integração Watson/Gemini](./docs/evidence/live-workflow.json) | Fluxo real aprovado pela API HTTP                                                                            | Cenários fictícios                                              |
+| [Classificação Watson](./docs/evidence/watson-evaluation.json) | 38 de 42 frases conforme a referência: 90,5%                                                                 | Quatro diferenças documentadas; amostra acadêmica pequena       |
+| [Extração Gemini](./docs/evidence/gemini-evaluation.json)      | Seis de seis saídas passaram esquema/evidências; todos os seis fatos da referência inicial foram encontrados | Um fato adicional apoiado no texto exigiu revisão da referência |
+| [Automação](./docs/evidence/automation-run.json)               | 240 medições de treino, 63 avaliadas, 11 alertas e zero eventos pendentes                                    | Distribuição artificial, sem conclusão clínica                  |
+| Persistência e sincronização                                   | Recuperação após indisponibilidade do MongoDB, sem duplicar os 11 alertas                                    | Falha testada em ambiente local controlado                      |
 
-Resultados completos, limitações e verificações pendentes estão em [docs/VALIDACAO.md](./docs/VALIDACAO.md) e nos [artefatos de evidência](./docs/evidence/).
+Os cenários de diálogo e seus resultados estão em [conversation-evaluation.json](./docs/evidence/conversation-evaluation.json). Os relatórios da entrega estão listados na [seção 12](#12-documentos-da-entrega).
 
 ## 10. Dados, privacidade e limites do protótipo
 
@@ -385,7 +382,7 @@ Resultados completos, limitações e verificações pendentes estão em [docs/VA
 - `.env`, materiais das aulas e diretórios de execução permanecem fora do repositório público, conforme [.gitignore](./.gitignore).
 - Healthchecks e presença de configuração não comprovam autenticação nas APIs externas.
 
-Permanecem pendentes na documentação: revisão em tela estreita, execução integral da matriz original, reimportação da exportação final em outra conta/máquina e avaliação da variação entre gerações independentes do Gemini. O andamento está no [plano de implementação](./PLANO_IMPLEMENTACAO.md).
+Permanecem pendentes na documentação: revisão em tela estreita, execução integral da matriz original, reimportação da exportação final em outra conta/máquina e avaliação da variação entre gerações independentes do Gemini.
 
 ## 11. Estrutura do repositório
 
@@ -438,18 +435,10 @@ cap1-fase5-v2/                                    # Raiz do projeto CardioIA.
 │   │   ├── extract_clinical.py                    # Permite extrair fatos de um relato pela linha de comando.
 │   │   └── prompt.txt                            # Define as instruções de extração e preservação de evidências e estados.
 │   └── __init__.py                               # Define o pacote Python de extensões.
-├── output/                                      # Artefatos finais da entrega acadêmica.
-│   ├── pdf/                                     # Relatórios em PDF para leitura e entrega.
-│   │   ├── fluxo-conversacional.pdf              # Relatório do assistente e do fluxo conversacional.
-│   │   ├── ir-alem-1-extracao.pdf                 # Relatório da extração estruturada com Gemini.
-│   │   └── ir-alem-2-automacao.pdf                # Relatório da automação, dos bancos e da detecção de anomalias.
-│   ├── video/                                   # Vídeo demonstrativo e informações sobre sua produção.
-│   │   ├── cardioia-demonstracao.mp4             # Apresenta a aplicação, a extração e a automação com narração.
-│   │   └── demonstracao.json                     # Registra duração, formato, origem das capturas e trechos da narração.
-│   └── word/                                    # Versões editáveis dos relatórios entregues em PDF.
-│       ├── fluxo-conversacional.docx             # Documento Word do relatório do fluxo conversacional.
-│       ├── ir-alem-1-extracao.docx                # Documento Word do relatório de extração com Gemini.
-│       └── ir-alem-2-automacao.docx               # Documento Word do relatório de automação e anomalias.
+├── relatorios/                                  # Relatórios finais em PDF para leitura e entrega acadêmica.
+│   ├── fluxo-conversacional-1e2.pdf              # Relatório do assistente e do fluxo conversacional.
+│   ├── ir-alem-1-extracao.pdf                    # Relatório da extração estruturada com Gemini.
+│   └── ir-alem-2-automacao.pdf                   # Relatório da automação, dos bancos e da detecção de anomalias.
 ├── services/                                    # Serviços compartilhados pelo backend e pela automação.
 │   ├── __init__.py                               # Define o pacote Python de serviços.
 │   ├── clinical_summary.py                       # Converte o contexto Watson em resumo de relatos, medições e confirmação.
@@ -465,12 +454,6 @@ cap1-fase5-v2/                                    # Raiz do projeto CardioIA.
 │       └── chat.js                               # Controla conversa, extração, resumo e consulta da automação pelas APIs Flask.
 ├── templates/                                   # Templates HTML renderizados pelo Flask.
 │   └── index.html                               # Estrutura a página de conversa, organização de relatos e monitoramento.
-├── tests/                                       # Testes do backend e scripts de validação com serviços reais.
-│   ├── live_conversation.py                      # Verifica estados, correções e desvios de fluxo no diálogo Watson real.
-│   ├── live_workflow.py                          # Valida via HTTP contexto, correção, isolamento, extração e reinício.
-│   ├── test_chat_api.py                          # Testa rotas, sessões, proteção CSRF, entradas e erros com serviços simulados.
-│   ├── test_extraction.py                        # Testa validação de fatos, evidências, negação, cache e limites de chamadas.
-│   └── test_watson_service.py                    # Testa configuração, preservação de sessão e tratamento de erros do Watson.
 ├── watson/                                      # Definição, atualização, exportação e avaliação do assistente.
 │   ├── assistant-skill.json                      # Contém a definição importável do diálogo, com intenções, entidades e nós.
 │   ├── build_skill.py                            # Gera a definição do diálogo a partir de sua fonte editável em Python.
@@ -485,7 +468,6 @@ cap1-fase5-v2/                                    # Raiz do projeto CardioIA.
 ├── compose.yaml                                 # Orquestra aplicação, MongoDB e robô, com volumes, redes e verificações de saúde.
 ├── config.py                                    # Carrega variáveis de ambiente e valores padrão usados pelos serviços.
 ├── Dockerfile                                   # Constrói a imagem da aplicação Flask e configura sua execução com Gunicorn.
-├── PLANO_IMPLEMENTACAO.md                        # Registra escopo, fases, critérios de aceitação e andamento do projeto.
 ├── README.md                                    # Apresenta o projeto, a configuração, o uso, os testes e os materiais da entrega.
 └── requirements.txt                             # Lista as dependências Python da aplicação e das integrações.
 ```
@@ -494,46 +476,29 @@ Arquivos locais como `.env`, `enunciado.md` e os PDFs das aulas, além de diret�
 
 ## 12. Documentos da entrega
 
-| Documento | Conteúdo |
-| --- | --- |
-| [Plano de implementação](./PLANO_IMPLEMENTACAO.md) | Escopo, fases, critérios e andamento |
-| [Fluxo conversacional](./docs/fluxo-conversacional.md) | Caminhos, estados e limites do assistente |
-| [Exportação oficial Watson](./watson/assistant-skill.json) | Diálogo para importação |
-| [Procedência da exportação](./watson/export-provenance.json) | Origem e hash do JSON |
-| Relatório do fluxo conversacional | [Word editável](./output/word/fluxo-conversacional.docx) e [PDF](./output/pdf/fluxo-conversacional.pdf), duas páginas |
-| Relatório Ir Além 1 — Extração | [Word editável](./output/word/ir-alem-1-extracao.docx) e [PDF](./output/pdf/ir-alem-1-extracao.pdf), quatro páginas |
-| Relatório Ir Além 2 — Automação | [Word editável](./output/word/ir-alem-2-automacao.docx) e [PDF](./output/pdf/ir-alem-2-automacao.pdf), cinco páginas |
-| [Resultados e limites das verificações](./docs/VALIDACAO.md) | Evidências e pendências |
-| [Roteiro do vídeo](./docs/roteiro-video.md) | Sequência da apresentação |
+| Documento                                                                            | Conteúdo                                                            |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------- |
+| [Fluxo conversacional](./docs/fluxo-conversacional.md)                               | Caminhos, estados e limites do assistente                           |
+| [Exportação oficial Watson](./watson/assistant-skill.json)                           | Diálogo para importação                                             |
+| [Procedência da exportação](./watson/export-provenance.json)                         | Origem e hash do JSON                                               |
+| [Relatório do fluxo conversacional — PDF](./relatorios/fluxo-conversacional-1e2.pdf) | Assistente, caminhos da conversa e gestão de contexto               |
+| [Relatório Ir Além 1 — PDF](./relatorios/ir-alem-1-extracao.pdf)                     | Extração estruturada com Gemini, exemplos e validação de evidências |
+| [Relatório Ir Além 2 — PDF](./relatorios/ir-alem-2-automacao.pdf)                    | Automação, persistência e detecção de anomalias                     |
+| [Artefatos de evidência](./docs/evidence/)                                           | Resultados das avaliações e capturas de tela                        |
 
-Os relatórios foram ampliados em 7 de setembro de 2026, com texto atualizado, exemplos, decisões de projeto e distinção entre resultados atuais e históricos. O relatório principal respeita o limite de uma a duas páginas do enunciado. Os PDFs foram exportados dos respectivos Word e as 11 páginas foram revisadas. Após editar um Word, exporte novamente seu PDF para manter as versões correspondentes.
+Os três PDFs da entrega estão reunidos diretamente na pasta [relatorios/](./relatorios/). Eles apresentam o projeto, os exemplos, as decisões de implementação e os resultados documentados.
 
 A publicação no GitHub será realizada pelo responsável pelo projeto. As contribuições individuais devem ser registradas antes do envio à faculdade.
 
 ## 13. Vídeo de apresentação
 
-▶️ [Assista à demonstração do CardioIA — 2min52s](./output/video/cardioia-demonstracao.mp4)
+O vídeo de apresentação do CardioIA foi publicado no YouTube.
 
-O vídeo reúne capturas reais da aplicação e narração sintetizada. É uma demonstração montada a partir de capturas, sem gravação contínua das interações. Os metadados estão em [output/video/demonstracao.json](./output/video/demonstracao.json).
+▶️ **Link do vídeo no YouTube: a adicionar.**
 
-## 14. Referências
+<!-- Adicionar aqui o link do vídeo publicado no YouTube. -->
 
-### 14.1 Base acadêmica
-
-| Material | Conteúdo utilizado |
-| --- | --- |
-| PCV, capítulo 10 — Arquitetura Cognitiva dos LLMs Modernos | pp. 17–37: Watson; pp. 46–49: Flask/HTML; pp. 57–63: APIs e integração híbrida |
-| AIRPA, capítulo 2 — Do Banco de Dados à Automação Inteligente | pp. 9–11: SQLite; pp. 23–30: Isolation Forest; pp. 46–48: MongoDB |
-
-Os PDFs das aulas e o enunciado ficam apenas no ambiente local. Docker foi incluído por requisito do projeto.
-
-### 14.2 Documentação técnica
-
-- [Modelo Gemini 3.5 Flash Lite](https://ai.google.dev/gemini-api/docs/models/gemini-3.5-flash-lite)
-- [SDK Google Gen AI](https://googleapis.github.io/python-genai/)
-- [IBM Watson Assistant — Dialog](https://cloud.ibm.com/docs/watson-assistant?topic=watson-assistant-skill-dialog-add)
-
-## 15. Licença
+## 14. Licença
 
 Uso acadêmico no projeto FIAP — Fase 5. A atribuição abaixo refere-se ao modelo institucional de README fornecido como referência.
 
