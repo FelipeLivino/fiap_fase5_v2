@@ -48,13 +48,11 @@ Rumo ao NEXT
 - [6. Configuração e fluxo do Watson](#6-configuração-e-fluxo-do-watson)
 - [7. Ir Além 1: extração estruturada com Gemini](#7-ir-além-1-extração-estruturada-com-gemini)
 - [8. Ir Além 2: automação e detecção de anomalias](#8-ir-além-2-automação-e-detecção-de-anomalias)
-- [9. Testes e evidências](#9-testes-e-evidências)
+- [9. Testes do robô e evidências](#9-testes-do-robô-e-evidências)
 - [10. Dados, privacidade e limites do protótipo](#10-dados-privacidade-e-limites-do-protótipo)
 - [11. Estrutura do repositório](#11-estrutura-do-repositório)
 - [12. Documentos da entrega](#12-documentos-da-entrega)
-- [13. Vídeo de apresentação](#13-vídeo-de-apresentação)
-- [14. Referências](#14-referências)
-- [15. Licença](#15-licença)
+- [13. Licença](#13-licença)
 
 ---
 
@@ -100,7 +98,7 @@ Os relatórios da entrega estão na pasta [relatorios/](./relatorios/), com os d
 | Banco relacional      | SQLite, embutido no Python                                                    |
 | Banco documental      | MongoDB 8.0 + PyMongo 4.18.0                                                  |
 | Detecção de anomalias | Isolation Forest, com scikit-learn 1.9.0                                      |
-| Testes                | `unittest` e scripts de avaliação                                             |
+| Testes e avaliações  | `unittest` para o robô; scripts de avaliação real do Watson e do Gemini       |
 | Orquestração          | Docker Compose                                                                |
 
 As dependências estão em [requirements.txt](./requirements.txt) e [automation/requirements.txt](./automation/requirements.txt).
@@ -341,9 +339,11 @@ docker compose exec robot python -m automation.add_measurement --systolic 120 --
 docker compose exec robot python -m automation.inspect_data
 ```
 
-## 9. Testes e evidências
+## 9. Testes do robô e evidências
 
-### 9.1 Testes automatizados
+Os testes do backend e os scripts de integração que ficavam na pasta `tests/` da raiz foram removidos. Na versão atual, os testes automatizados estão em [automation/tests/test_pipeline.py](./automation/tests/test_pipeline.py).
+
+### 9.1 Testes automatizados do robô
 
 ```sh
 docker compose --profile automacao run --rm --no-deps robot python -m unittest discover -s automation/tests -v
@@ -351,7 +351,9 @@ docker compose --profile automacao run --rm --no-deps robot python -m unittest d
 
 Os cinco testes disponíveis em [automation/tests/](./automation/tests/) verificam a carga inicial, a análise de medições, a prevenção de duplicações e o reenvio de eventos. O MongoDB é substituído por um objeto controlado durante os testes; essa suíte não mede a qualidade do Watson/Gemini.
 
-### 9.2 Validação com APIs reais
+### 9.2 Scripts de avaliação disponíveis
+
+Os scripts [watson/evaluate.py](./watson/evaluate.py) e [extensions/generative/evaluate.py](./extensions/generative/evaluate.py) continuam no repositório e podem ser executados com:
 
 ```sh
 docker compose run --rm --no-deps app python -m watson.evaluate
@@ -360,9 +362,11 @@ docker compose run --rm --no-deps app python -m extensions.generative.evaluate
 
 O primeiro script avalia 42 frases inéditas com o Watson. O segundo avalia seis relatos fictícios com o Gemini, verificando formato, evidências e correspondência com as referências esperadas. A reprodução requer credenciais válidas e está sujeita às cotas dos serviços.
 
-### 9.3 Resultados documentados
+### 9.3 Evidências históricas
 
 Os resultados abaixo são registros históricos preservados nos [artefatos de evidência](./docs/evidence/). Eles correspondem às versões e execuções documentadas nesses arquivos.
+
+Os arquivos `live-workflow.json` e `conversation-evaluation.json` preservam resultados de integração e diálogo obtidos pelos scripts removidos. São registros para consulta; a versão atual não inclui os executáveis usados para gerar esses dois arquivos.
 
 | Verificação                                                    | Resultado registrado                                                                                         | Limite                                                          |
 | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------- |
