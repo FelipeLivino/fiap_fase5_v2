@@ -58,6 +58,8 @@ Rumo ao NEXT
 
 ---
 
+▶️ **[Assista ao vídeo no YouTube](https://youtu.be/iyTgsy-5JIY)**
+
 ## 1. Contexto e objetivo
 
 O **CardioIA** é um protótipo acadêmico da Fase 5 que integra **Watson Assistant Dialog, Flask e HTML** para organizar relatos e medições fictícias em uma conversa. O usuário pode informar dados, consultar um resumo, corrigir campos e confirmar o conteúdo registrado.
