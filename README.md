@@ -58,7 +58,7 @@ Rumo ao NEXT
 
 ---
 
-▶️ **[Assista ao vídeo no YouTube](https://youtu.be/iyTgsy-5JIY)**
+▶️ **[Assista ao vídeo de apresentação no YouTube](https://youtu.be/iyTgsy-5JIY)**
 
 ## 1. Contexto e objetivo
 
